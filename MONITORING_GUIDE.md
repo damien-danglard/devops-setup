@@ -125,8 +125,8 @@ rate(http_requests_total[5m])
 ```
 
 **Errors:** Taux d'erreur
+> Taux d'erreur : `status=~"5.."` filtre les codes HTTP 5xx (erreurs serveur)
 ```prometheus
-# Taux d'erreur: status=~"5.." filtre les codes HTTP 5xx (erreurs serveur)
 rate(http_requests_total{status=~"5.."}[5m]) 
 / 
 rate(http_requests_total[5m])
