@@ -504,4 +504,4 @@ healthcheck:
 5. **Keep it Simple:** Commencez simple, complexifiez si nécessaire
 6. **Document:** Architecture, décisions, runbooks
 7. **Cost Awareness:** Monitoring des coûts dès le jour 1
-8. **Compliance:** Considérez RGPD, SOC2, etc. dès le départ
+8. **Compliance:** Considérez RGPD (GDPR), SOC2, etc. dès le départ

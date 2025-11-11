@@ -36,6 +36,7 @@ Cette checklist vous guide à travers toutes les étapes nécessaires pour initi
 - [ ] Documenter les prérequis système
 - [ ] Créer un fichier de configuration d'environnement (.env.example)
 - [ ] Configurer Docker/Docker Compose pour le développement local
+- [ ] Configurer Dev Containers (.devcontainer) pour standardiser l'environnement
 - [ ] Documenter la procédure d'installation dans le README
 - [ ] Créer des scripts d'initialisation (setup.sh, init.ps1, etc.)
 
@@ -80,6 +81,7 @@ Cette checklist vous guide à travers toutes les étapes nécessaires pour initi
 
 ### 4.2 Déploiement Continu
 - [ ] Définir la stratégie de déploiement (blue/green, canary, rolling, etc.)
+- [ ] Considérer une approche GitOps (Flux, ArgoCD) pour Kubernetes
 - [ ] Configurer les environnements (dev, staging, prod)
 - [ ] Automatiser le déploiement vers chaque environnement
 - [ ] Configurer les approbations manuelles pour la production

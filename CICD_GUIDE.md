@@ -7,6 +7,7 @@ Ce guide couvre les meilleures pratiques pour mettre en place un pipeline CI/CD 
 - [Pipeline CI](#pipeline-ci)
 - [Pipeline CD](#pipeline-cd)
 - [Stratégies de Déploiement](#stratégies-de-déploiement)
+- [GitOps](#gitops)
 - [Exemples de Configuration](#exemples-de-configuration)
 
 ## Principes Fondamentaux
@@ -434,6 +435,181 @@ if (featureFlags.isEnabled('new-checkout')) {
 - Unleash
 - Split
 - Custom solution
+
+## GitOps
+
+### Principe
+
+GitOps est une approche où Git est la source de vérité unique pour l'infrastructure et les déploiements. Toute modification passe par Git, et un opérateur automatique synchronise l'état désiré (Git) avec l'état actuel (cluster).
+
+```
+Git Repository (État désiré)
+      ↓
+GitOps Operator (surveille et synchronise)
+      ↓
+Kubernetes Cluster (État actuel)
+```
+
+### Avantages
+
+- ✅ **Traçabilité complète:** Historique Git de tous les changements
+- ✅ **Audit:** Qui a changé quoi, quand, pourquoi (commits)
+- ✅ **Rollback facile:** git revert pour revenir en arrière
+- ✅ **Déclaratif:** Déclarer l'état désiré, pas les étapes
+- ✅ **Disaster recovery:** Clone du repo = restauration complète
+- ✅ **Pull vs Push:** Le cluster pull les changements (plus sécurisé)
+
+### Outils GitOps
+
+#### Flux CD
+
+**Type:** Open source (CNCF) | Self-hosted
+
+**Avantages:**
+- Natif Kubernetes
+- Support multi-tenant
+- Notifications avancées
+- Helm et Kustomize intégrés
+- Progressive delivery (Flagger)
+
+**Inconvénients:**
+- Courbe d'apprentissage
+- Kubernetes uniquement
+
+**Cas d'usage:** Standard GitOps Kubernetes
+
+**Installation:**
+```bash
+flux bootstrap github \
+  --owner=mon-org \
+  --repository=mon-repo \
+  --path=clusters/production \
+  --personal
+```
+
+#### ArgoCD
+
+**Type:** Open source (CNCF) | Self-hosted & SaaS (Codefresh)
+
+**Avantages:**
+- UI excellente
+- Multi-cluster natif
+- Sync policies flexibles
+- SSO intégré
+- Application dependencies
+
+**Inconvénients:**
+- Plus lourd que Flux
+- Configuration plus complexe
+
+**Cas d'usage:** Équipes préférant UI, multi-cluster
+
+**Configuration exemple:**
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mon-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mon-org/mon-repo
+    targetRevision: HEAD
+    path: k8s/production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+```
+
+#### Jenkins X
+
+**Type:** Open source | Self-hosted
+
+**Avantages:**
+- GitOps + CI/CD intégré
+- Preview environments automatiques
+- Promotion automatique entre environnements
+
+**Inconvénients:**
+- Complexe
+- Moins actif que Flux/Argo
+
+**Cas d'usage:** Legacy Jenkins, besoin solution tout-en-un
+
+### Structure Repository GitOps
+
+**Mono-repo:**
+```
+gitops-repo/
+├── apps/
+│   ├── app1/
+│   │   ├── base/
+│   │   └── overlays/
+│   │       ├── dev/
+│   │       ├── staging/
+│   │       └── prod/
+│   └── app2/
+├── infrastructure/
+│   ├── ingress/
+│   ├── cert-manager/
+│   └── monitoring/
+└── clusters/
+    ├── dev/
+    ├── staging/
+    └── prod/
+```
+
+**Repo par environnement:**
+```
+gitops-dev/
+gitops-staging/
+gitops-prod/
+```
+
+### Best Practices GitOps
+
+1. **Séparer config et code:** Repos distincts pour app et config
+2. **Environnements par branches ou dossiers:** Isoler les environnements
+3. **Protection de branches:** Approvals pour production
+4. **Secrets externes:** Sealed Secrets, External Secrets
+5. **Automated sync avec limites:** Auto-sync dev/staging, manuel prod
+6. **Health checks:** Vérifier la santé des applications
+7. **Notifications:** Alertes sur échecs de sync
+
+### Workflow GitOps Typique
+
+```
+1. Développeur modifie k8s/deployment.yaml
+2. Commit + Push sur Git
+3. PR review + merge
+4. GitOps operator détecte changement
+5. Operator applique changement au cluster
+6. Operator vérifie health checks
+7. Si OK: sync complete, Si KO: rollback ou alerte
+```
+
+### GitOps vs Traditional CI/CD
+
+**Traditional CI/CD (Push):**
+```
+CI/CD Pipeline → kubectl apply → Cluster
+```
+- ❌ Credentials dans CI/CD
+- ❌ Pas de garantie état désiré = état actuel
+- ❌ Drift possible
+
+**GitOps (Pull):**
+```
+Git → GitOps Operator (dans cluster) → Cluster
+```
+- ✅ Pas de credentials externes
+- ✅ Réconciliation continue
+- ✅ Self-healing automatique
 
 ## Exemples de Configuration
 

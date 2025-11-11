@@ -4,7 +4,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ## Table des Matières
 - [Gestion de Version](#gestion-de-version)
+- [Environnement de Développement](#environnement-de-développement)
 - [CI/CD](#cicd)
+- [Registres d'Artifacts](#registres-dartifacts)
 - [Infrastructure as Code](#infrastructure-as-code)
 - [Conteneurisation et Orchestration](#conteneurisation-et-orchestration)
 - [Monitoring et Observabilité](#monitoring-et-observabilité)
@@ -67,9 +69,93 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Description:** Tout le monde commit sur main/trunk
 **Quand l'utiliser:** Équipes matures, forte couverture de tests, CI/CD avancé
 
+## Environnement de Développement
+
+### Dev Containers
+
+**Type:** Open source | Self-hosted (VSCode, GitHub Codespaces)
+
+**Description:** Environnements de développement conteneurisés standardisés
+
+**Avantages:**
+- Environnement reproductible et cohérent
+- Onboarding rapide des nouveaux développeurs
+- Configuration as code (.devcontainer)
+- Support multi-IDE (VSCode, GitHub Codespaces, JetBrains)
+- Isolation complète par projet
+
+**Inconvénients:**
+- Nécessite Docker
+- Performance légèrement réduite (surtout sur Windows/Mac)
+- Courbe d'apprentissage initiale
+
+**Cas d'usage:** Équipes distribuées, projets complexes, standardisation environnement
+
+**Configuration exemple:**
+```json
+// .devcontainer/devcontainer.json
+{
+  "name": "Mon Projet",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3000]
+}
+```
+
+### GitHub Codespaces
+
+**Type:** Propriétaire | SaaS (GitHub)
+
+**Description:** Dev containers dans le cloud
+
+**Avantages:**
+- Pas besoin de machine locale puissante
+- Setup instantané
+- Intégration GitHub native
+- Préconfiguré avec devcontainers
+
+**Inconvénients:**
+- Coût mensuel (heures d'utilisation)
+- Dépendant de la connexion internet
+- GitHub uniquement
+
+**Cas d'usage:** Développement cloud-native, équipes distribuées, machines locales limitées
+
+### GitPod
+
+**Type:** Open source & SaaS | Self-hosted & Cloud
+
+**Description:** Alternative à GitHub Codespaces, multi-plateforme
+
+**Avantages:**
+- Support GitHub, GitLab, Bitbucket
+- Open source (self-hosted possible)
+- Configuration as code (.gitpod.yml)
+- Snapshots d'environnement
+
+**Inconvénients:**
+- Moins intégré que Codespaces
+- Coût pour usage intensif
+
+**Cas d'usage:** Multi-plateformes Git, besoin self-hosted
+
 ## CI/CD
 
 ### GitHub Actions
+
+**Type:** Propriétaire | SaaS (GitHub)
+
 **Avantages:**
 - Intégration native GitHub
 - Large marketplace d'actions
@@ -83,6 +169,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Projets GitHub, startups, open source
 
 ### GitLab CI/CD
+
+**Type:** Open source (CE) & Propriétaire (EE) | Self-hosted & SaaS
+
 **Avantages:**
 - Très puissant et flexible
 - Intégré à GitLab
@@ -96,6 +185,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Projets GitLab, besoins avancés de CI/CD
 
 ### Jenkins
+
+**Type:** Open source | Self-hosted
+
 **Avantages:**
 - Très mature et éprouvé
 - Énorme écosystème de plugins
@@ -110,6 +202,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Entreprises établies, besoins très spécifiques, legacy
 
 ### CircleCI
+
+**Type:** Propriétaire | SaaS
+
 **Avantages:**
 - Très rapide
 - Bonne expérience développeur
@@ -122,6 +217,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Projets Docker, besoin de rapidité
 
 ### Azure DevOps
+
+**Type:** Propriétaire | SaaS (Azure)
+
 **Avantages:**
 - Intégration Microsoft excellente
 - Très complet
@@ -133,9 +231,163 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 **Cas d'usage:** Environnements Microsoft, .NET
 
+## Registres d'Artifacts
+
+Les registres d'artifacts stockent et gèrent vos packages, images Docker, et autres artifacts de build.
+
+### Docker Hub
+
+**Type:** SaaS | Gratuit & Payant
+
+**Avantages:**
+- Standard de facto pour images Docker
+- Gratuit pour repos publics
+- Intégration facile
+- Large bibliothèque d'images publiques
+
+**Inconvénients:**
+- Rate limiting sur plan gratuit
+- Fonctionnalités limitées version gratuite
+- Pas de support multi-format
+
+**Cas d'usage:** Images Docker publiques, petits projets
+
+### GitHub Container Registry (GHCR)
+
+**Type:** SaaS (GitHub) | Gratuit pour public
+
+**Avantages:**
+- Intégration native GitHub
+- Gratuit pour repos publics
+- Support OCI images
+- Bon pour GitHub Actions
+
+**Inconvénients:**
+- Limité à l'écosystème GitHub
+- Moins de fonctionnalités qu'Artifactory
+
+**Cas d'usage:** Projets GitHub, images Docker
+
+### GitLab Container Registry
+
+**Type:** Open source & SaaS | Self-hosted & Cloud
+
+**Avantages:**
+- Intégré à GitLab
+- Gratuit en self-hosted
+- Support multi-format
+- Scan de vulnérabilités intégré
+
+**Inconvénients:**
+- Performances variables
+- Fonctionnalités avancées limitées
+
+**Cas d'usage:** Projets GitLab, self-hosted
+
+### Azure Container Registry (ACR)
+
+**Type:** Propriétaire | SaaS (Azure)
+
+**Avantages:**
+- Intégration Azure native
+- Geo-replication
+- Scan de sécurité intégré
+- Support multi-format (Docker, Helm, OCI)
+
+**Inconvénients:**
+- Coûts pour stockage et transfert
+- Azure uniquement
+
+**Cas d'usage:** Projets Azure, geo-distribution
+
+### Amazon Elastic Container Registry (ECR)
+
+**Type:** Propriétaire | SaaS (AWS)
+
+**Avantages:**
+- Intégration AWS native (ECS, EKS)
+- Scan de vulnérabilités
+- Réplication cross-region
+- IAM integration
+
+**Inconvénients:**
+- AWS uniquement
+- Coûts de stockage et transfert
+
+**Cas d'usage:** Projets AWS, intégration ECS/EKS
+
+### Google Artifact Registry
+
+**Type:** Propriétaire | SaaS (GCP)
+
+**Avantages:**
+- Support multi-format (Docker, Maven, npm, Python, etc.)
+- Remplace Container Registry
+- Intégration GCP native
+- Scan de vulnérabilités
+
+**Inconvénients:**
+- GCP uniquement
+- Migration depuis Container Registry nécessaire
+
+**Cas d'usage:** Projets GCP, multi-format
+
+### JFrog Artifactory
+
+**Type:** Propriétaire | Self-hosted & SaaS
+
+**Avantages:**
+- Support universel (tous types de packages)
+- Très complet et mature
+- HA et geo-replication
+- Excellent pour grandes entreprises
+
+**Inconvénients:**
+- Coûteux
+- Complexe à configurer
+- Peut être overkill pour petits projets
+
+**Cas d'usage:** Entreprises, multi-format, besoins avancés
+
+### Sonatype Nexus
+
+**Type:** Open source & Propriétaire | Self-hosted & SaaS
+
+**Avantages:**
+- Support multi-format
+- Version open source disponible
+- Mature et stable
+- Bon rapport qualité/prix
+
+**Inconvénients:**
+- Interface moins moderne
+- Configuration peut être complexe
+
+**Cas d'usage:** Self-hosted, budget limité, multi-format
+
+### Harbor
+
+**Type:** Open source | Self-hosted
+
+**Avantages:**
+- Open source (CNCF)
+- Excellent pour Kubernetes
+- Scan de sécurité intégré (Trivy, Clair)
+- Signature d'images (Notary)
+- Réplication multi-registry
+
+**Inconvénients:**
+- Setup et maintenance requis
+- Principalement orienté conteneurs
+
+**Cas d'usage:** Kubernetes, sécurité importante, self-hosted
+
 ## Infrastructure as Code
 
 ### Terraform
+
+**Type:** Open source | Self-hosted & SaaS (Terraform Cloud)
+
 **Avantages:**
 - Multi-cloud
 - Large communauté
@@ -149,6 +401,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Multi-cloud, infrastructure complexe, standard de l'industrie
 
 ### CloudFormation
+
+**Type:** Propriétaire AWS | SaaS (AWS)
+
 **Avantages:**
 - Natif AWS
 - Gratuit
@@ -161,7 +416,44 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 **Cas d'usage:** Projets AWS uniquement
 
+### Azure Bicep
+
+**Type:** Open source | SaaS (Azure)
+
+**Avantages:**
+- Langage déclaratif simple pour Azure
+- Transpile vers ARM templates
+- Intégration native Azure
+- Syntaxe plus concise que JSON/ARM
+
+**Inconvénients:**
+- Azure uniquement
+- Plus récent, moins mature que Terraform
+- Communauté plus restreinte
+
+**Cas d'usage:** Projets Azure exclusivement, alternative moderne à ARM templates
+
+### Google Cloud Deployment Manager
+
+**Type:** Propriétaire GCP | SaaS (GCP)
+
+**Avantages:**
+- Natif GCP
+- Support complet Google Cloud
+- Gratuit
+- Python, Jinja2 templates
+
+**Inconvénients:**
+- GCP uniquement
+- Moins populaire que Terraform
+- Communauté limitée
+
+**Cas d'usage:** Projets GCP uniquement
+
 ### Pulumi
+
+**Type:** Open source | Self-hosted & SaaS (Pulumi Cloud)
+
 **Avantages:**
 - Code dans langages standards (TypeScript, Python, Go, etc.)
 - Multi-cloud
@@ -174,6 +466,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Équipes préférant langages traditionnels, besoins de logique complexe
 
 ### Ansible
+
+**Type:** Open source | Self-hosted & SaaS (Ansible Tower/AWX)
+
 **Avantages:**
 - Simple, agentless
 - Bon pour configuration management
@@ -188,9 +483,33 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 ## Conteneurisation et Orchestration
 
 ### Docker
+
+**Type:** Open source | Self-hosted
+
 **Standard:** Incontournable pour la conteneurisation
 
+### Podman
+
+**Type:** Open source | Self-hosted
+
+**Avantages:**
+- Compatible Docker (API compatible)
+- Daemonless (pas de daemon root)
+- Rootless par défaut (meilleure sécurité)
+- Intégration native systemd
+- Supporte les pods Kubernetes
+
+**Inconvénients:**
+- Moins répandu que Docker
+- Quelques incompatibilités mineures
+- Écosystème d'outils moins mature
+
+**Cas d'usage:** Environnements sécurisés, Red Hat/Fedora, alternative à Docker
+
 ### Kubernetes
+
+**Type:** Open source | Self-hosted & SaaS (EKS, GKE, AKS)
+
 **Avantages:**
 - Standard de l'industrie
 - Très puissant
@@ -205,6 +524,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Microservices, scale important, multi-cloud
 
 ### Amazon ECS/EKS
+
+**Type:** Propriétaire AWS | SaaS (AWS)
+
 **Avantages:**
 - Intégration AWS native
 - ECS plus simple que Kubernetes
@@ -216,7 +538,42 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 **Cas d'usage:** Projets AWS, besoin de simplicité (ECS) ou puissance (EKS)
 
+### Azure Container Instances / AKS
+
+**Type:** Propriétaire Azure | SaaS (Azure)
+
+**Avantages:**
+- Intégration Azure native
+- ACI pour conteneurs simples sans orchestration
+- AKS managed Kubernetes
+- Bonne intégration avec Azure AD
+
+**Inconvénients:**
+- Lock-in Azure
+- ACI limité pour orchestration complexe
+
+**Cas d'usage:** Projets Azure, ACI pour jobs simples, AKS pour orchestration
+
+### Google Cloud Run / GKE
+
+**Type:** Propriétaire GCP | SaaS (GCP)
+
+**Avantages:**
+- Cloud Run serverless pour conteneurs
+- GKE managed Kubernetes (créateurs de K8s)
+- Autopilot mode (fully managed)
+- Excellente intégration GCP
+
+**Inconvénients:**
+- Lock-in GCP
+- Cloud Run plus limité qu'orchestration complète
+
+**Cas d'usage:** Projets GCP, Cloud Run pour simplicité, GKE pour orchestration avancée
+
 ### Docker Swarm
+
+**Type:** Open source | Self-hosted
+
 **Avantages:**
 - Simple
 - Intégré à Docker
@@ -231,6 +588,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 ## Monitoring et Observabilité
 
 ### Prometheus + Grafana
+
+**Type:** Open source | Self-hosted & SaaS (Grafana Cloud)
+
 **Avantages:**
 - Open source
 - Standard pour Kubernetes
@@ -244,6 +604,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Kubernetes, on-premise, budget limité
 
 ### Datadog
+
+**Type:** Propriétaire | SaaS
+
 **Avantages:**
 - Tout-en-un (metrics, logs, traces, APM)
 - Excellente UX
@@ -257,6 +620,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Entreprises, besoin de solution complète, budget disponible
 
 ### New Relic
+
+**Type:** Propriétaire | SaaS
+
 **Avantages:**
 - APM excellent
 - Tout-en-un
@@ -269,6 +635,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Focus sur APM, applications complexes
 
 ### ELK Stack (Elasticsearch, Logstash, Kibana)
+
+**Type:** Open source | Self-hosted & SaaS (Elastic Cloud)
+
 **Avantages:**
 - Puissant pour les logs
 - Open source
@@ -281,6 +650,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Centralisation logs, analyse de données
 
 ### CloudWatch (AWS)
+
+**Type:** Propriétaire | SaaS (AWS)
+
 **Avantages:**
 - Natif AWS
 - Intégration parfaite
@@ -292,9 +664,44 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 **Cas d'usage:** Infrastructure AWS
 
+### Azure Monitor
+
+**Type:** Propriétaire | SaaS (Azure)
+
+**Avantages:**
+- Intégration Azure native
+- Application Insights pour APM
+- Log Analytics puissant
+- Alerting intégré
+
+**Inconvénients:**
+- Azure uniquement
+- Coûts basés sur l'ingestion
+
+**Cas d'usage:** Infrastructure Azure
+
+### Google Cloud Monitoring (ex-Stackdriver)
+
+**Type:** Propriétaire | SaaS (GCP)
+
+**Avantages:**
+- Intégration GCP native
+- Basé sur Monarch (système Google interne)
+- Logging et monitoring unifiés
+- Gratuit jusqu'à certains seuils
+
+**Inconvénients:**
+- GCP uniquement
+- Moins de fonctionnalités que solutions dédiées
+
+**Cas d'usage:** Infrastructure GCP
+
 ## Gestion des Secrets
 
 ### HashiCorp Vault
+
+**Type:** Open source & Propriétaire (Enterprise) | Self-hosted & SaaS (HCP Vault)
+
 **Avantages:**
 - Très sécurisé
 - Multi-cloud
@@ -308,6 +715,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Entreprises, haute sécurité, multi-environnements
 
 ### AWS Secrets Manager
+
+**Type:** Propriétaire | SaaS (AWS)
+
 **Avantages:**
 - Natif AWS
 - Simple
@@ -321,6 +731,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Projets AWS
 
 ### Azure Key Vault
+
+**Type:** Propriétaire | SaaS (Azure)
+
 **Avantages:**
 - Natif Azure
 - Intégration AD
@@ -332,6 +745,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Projets Azure
 
 ### Sealed Secrets (Kubernetes)
+
+**Type:** Open source | Self-hosted
+
 **Avantages:**
 - GitOps friendly
 - Gratuit
@@ -343,11 +759,30 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 **Cas d'usage:** Kubernetes, GitOps
 
+### Google Secret Manager
+
+**Type:** Propriétaire | SaaS (GCP)
+
+**Avantages:**
+- Intégration GCP native
+- Simple à utiliser
+- Versioning automatique
+- Audit logs intégrés
+
+**Inconvénients:**
+- GCP uniquement
+- Coûts basés sur l'usage
+
+**Cas d'usage:** Projets GCP
+
 ## Sécurité
 
 ### Scanning de Code (SAST)
 
 #### SonarQube
+
+**Type:** Open source (Community) & Propriétaire (Enterprise) | Self-hosted & SaaS (SonarCloud)
+
 **Avantages:**
 - Très complet
 - Multi-langage
@@ -361,6 +796,9 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Standard de l'industrie, tous projets
 
 #### Snyk
+
+**Type:** Propriétaire | SaaS
+
 **Avantages:**
 - Focus développeur
 - Excellentes intégrations
@@ -375,6 +813,8 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 ### Scanning de Conteneurs
 
 #### Trivy
+
+**Type:** Open source | Self-hosted & SaaS (Aqua)
 **Avantages:**
 - Open source
 - Rapide

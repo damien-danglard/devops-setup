@@ -94,35 +94,23 @@ Sécurité intégrée tout au long du cycle:
 
 ### Pour un Nouveau Projet
 
-1. **Commencez par la checklist**
-   ```bash
-   # Ouvrez CHECKLIST.md et suivez les étapes
-   ```
+1. **Commencez par la checklist**  
+   Ouvrez [CHECKLIST.md](CHECKLIST.md) et suivez les étapes
 
-2. **Choisissez vos outils**
-   ```bash
-   # Consultez TOOLS_GUIDE.md pour faire vos choix
-   ```
+2. **Choisissez vos outils**  
+   Consultez [TOOLS_GUIDE.md](TOOLS_GUIDE.md) pour faire vos choix
 
-3. **Définissez votre architecture**
-   ```bash
-   # Lisez ARCHITECTURE_GUIDE.md pour les décisions architecturales
-   ```
+3. **Définissez votre architecture**  
+   Lisez [ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md) pour les décisions architecturales
 
-4. **Configurez votre pipeline**
-   ```bash
-   # Suivez CICD_GUIDE.md pour mettre en place CI/CD
-   ```
+4. **Configurez votre pipeline**  
+   Suivez [CICD_GUIDE.md](CICD_GUIDE.md) pour mettre en place CI/CD
 
-5. **Implémentez la sécurité**
-   ```bash
-   # Appliquez SECURITY_GUIDE.md dès le début
-   ```
+5. **Implémentez la sécurité**  
+   Appliquez [SECURITY_GUIDE.md](SECURITY_GUIDE.md) dès le début
 
-6. **Configurez l'observabilité**
-   ```bash
-   # Utilisez MONITORING_GUIDE.md pour metrics, logs, traces
-   ```
+6. **Configurez l'observabilité**  
+   Utilisez [MONITORING_GUIDE.md](MONITORING_GUIDE.md) pour metrics, logs, traces
 
 ### Par Taille de Projet
 
