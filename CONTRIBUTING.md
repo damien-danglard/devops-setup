@@ -60,7 +60,7 @@ We welcome suggestions for:
    
    Follow these commit message guidelines:
    - Use the imperative mood ("Add feature" not "Added feature")
-   - Keep the first line under 50 characters
+   - Keep the first line under 50 characters (72 maximum)
    - Add detailed description if needed after a blank line
 
 6. **Push to Your Fork**
