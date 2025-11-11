@@ -134,7 +134,8 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### GitPod
 
-**Type:** Open source & SaaS | Self-hosted & Cloud
+**Type:** Open source & SaaS | Self-hosted & Cloud  
+![License](https://img.shields.io/github/license/gitpod-io/gitpod)
 
 **Description:** Alternative à GitHub Codespaces, multi-plateforme
 
