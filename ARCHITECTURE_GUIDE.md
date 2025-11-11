@@ -490,7 +490,7 @@ healthcheck:
 - Ressources sous-utilisées
 
 ### Considérations:
-- Data residency et RGPD
+- Data residency et RGPD (GDPR)
 - Latence réseau inter-régions
 - Coûts de transfert de données
 - Complexité opérationnelle
