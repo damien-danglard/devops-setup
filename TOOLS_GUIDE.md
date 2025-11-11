@@ -175,7 +175,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 ### GitLab CI/CD
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/github/license/gitlabhq/gitlabhq) ![License](https://img.shields.io/badge/License-Proprietary-red)
+![License](https://img.shields.io/gitlab/license/gitlab-org%2Fgitlab-foss) ![License](https://img.shields.io/badge/License-Proprietary%20(EE)-red)
 
 **Avantages:**
 - Très puissant et flexible
