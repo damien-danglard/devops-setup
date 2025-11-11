@@ -145,7 +145,7 @@ Hello World
 
 ## 🤝 Code of Conduct
 
-This project follows a Code of Conduct to ensure a welcoming environment for all contributors. By participating, you agree to:
+This project follows a Code of Conduct to ensure a welcoming environment for all contributors. Please read the full [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to:
 
 - Be respectful and inclusive
 - Accept constructive criticism
