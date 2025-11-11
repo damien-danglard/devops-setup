@@ -126,6 +126,7 @@ rate(http_requests_total[5m])
 
 **Errors:** Taux d'erreur
 ```prometheus
+# 'status=~"5.."': matches HTTP status codes starting with 5 (i.e., 5xx server errors)
 rate(http_requests_total{status=~"5.."}[5m]) 
 / 
 rate(http_requests_total[5m])
