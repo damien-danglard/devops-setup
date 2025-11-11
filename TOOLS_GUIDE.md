@@ -245,7 +245,8 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Docker Hub
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
+![License](https://img.shields.io/badge/License-Proprietary-red)
 
 **Avantages:**
 - Standard de facto pour images Docker
@@ -262,7 +263,8 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### GitHub Container Registry (GHCR)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue)
+![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue)  
+![License](https://img.shields.io/badge/License-Proprietary-red)
 
 **Avantages:**
 - Intégration native GitHub
@@ -279,7 +281,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 ### GitLab Container Registry
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/github/license/gitlab-org%2Fgitlab-foss)
+![License](https://img.shields.io/gitlab/license/gitlab-org%2Fgitlab-foss?label=License%20(CE)) ![License](https://img.shields.io/badge/License%20(EE)-Proprietary-red)
 
 **Avantages:**
 - Intégré à GitLab
