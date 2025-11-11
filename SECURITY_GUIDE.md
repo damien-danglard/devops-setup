@@ -734,7 +734,7 @@ resource "aws_cloudtrail" "main" {
 }
 ```
 
-### RGPD / GDPR
+### RGPD (GDPR en anglais)
 
 **Checklist:**
 ```yaml
