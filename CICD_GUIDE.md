@@ -459,7 +459,8 @@ Kubernetes Cluster (État actuel)
 
 #### Flux CD
 
-**Type:** Open source (CNCF) | Self-hosted
+**Type:** Open source (CNCF) | Self-hosted  
+![License](https://img.shields.io/github/license/fluxcd/flux2)
 
 **Avantages:**
 - Natif Kubernetes
@@ -485,7 +486,8 @@ flux bootstrap github \
 
 #### ArgoCD
 
-**Type:** Open source (CNCF) | Self-hosted & SaaS (Codefresh)
+**Type:** Open source (CNCF) | Self-hosted & SaaS (Codefresh)  
+![License](https://img.shields.io/github/license/argoproj/argo-cd)
 
 **Avantages:**
 - UI excellente
@@ -524,7 +526,8 @@ spec:
 
 #### Jenkins X
 
-**Type:** Open source | Self-hosted
+**Type:** Open source | Self-hosted  
+![License](https://img.shields.io/github/license/jenkins-x/jx)
 
 **Avantages:**
 - GitOps + CI/CD intégré
