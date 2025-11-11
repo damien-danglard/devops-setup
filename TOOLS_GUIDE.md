@@ -73,7 +73,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### Dev Containers
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) *(VSCode, GitHub Codespaces)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted%20(VSCode%2C%20GitHub%20Codespaces)-brightgreen">  
 ![License](https://img.shields.io/github/license/microsoft/vscode-dev-containers)
 
 **Description:** Environnements de développement conteneurisés standardisés
@@ -116,7 +116,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### GitHub Codespaces
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GitHub)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue">
 
 **Description:** Dev containers dans le cloud
 
@@ -135,7 +135,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### GitPod
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS-blue">  
 ![License](https://img.shields.io/github/license/gitpod-io/gitpod)
 
 **Description:** Alternative à GitHub Codespaces, multi-plateforme
@@ -156,7 +156,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### GitHub Actions
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GitHub)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue">
 
 **Avantages:**
 - Intégration native GitHub
@@ -172,7 +172,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### GitLab CI/CD
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS-blue">  
 ![License](https://img.shields.io/github/license/gitlabhq/gitlabhq)
 
 **Avantages:**
@@ -189,7 +189,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### Jenkins
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen">  
 ![License](https://img.shields.io/github/license/jenkinsci/jenkins)
 
 **Avantages:**
@@ -207,7 +207,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### CircleCI
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+<img src="https://img.shields.io/badge/Hosting-SaaS-blue">
 
 **Avantages:**
 - Très rapide
@@ -222,7 +222,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ### Azure DevOps
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Azure)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue">
 
 **Avantages:**
 - Intégration Microsoft excellente
@@ -241,7 +241,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Docker Hub
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+<img src="https://img.shields.io/badge/Hosting-SaaS-blue">
 
 **Avantages:**
 - Standard de facto pour images Docker
@@ -258,7 +258,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### GitHub Container Registry (GHCR)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GitHub)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue">
 
 **Avantages:**
 - Intégration native GitHub
@@ -274,7 +274,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### GitLab Container Registry
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS-blue">  
 ![License](https://img.shields.io/github/license/gitlabhq/gitlabhq)
 
 **Avantages:**
@@ -291,7 +291,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Azure Container Registry (ACR)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Azure)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue">
 
 **Avantages:**
 - Intégration Azure native
@@ -307,7 +307,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Amazon Elastic Container Registry (ECR)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(AWS)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(AWS)-blue">
 
 **Avantages:**
 - Intégration AWS native (ECS, EKS)
@@ -323,7 +323,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Google Artifact Registry
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GCP)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GCP)-blue">
 
 **Avantages:**
 - Support multi-format (Docker, Maven, npm, Python, etc.)
@@ -339,7 +339,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### JFrog Artifactory
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS-blue">
 
 **Avantages:**
 - Support universel (tous types de packages)
@@ -356,7 +356,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Sonatype Nexus
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS-blue">  
 ![License](https://img.shields.io/github/license/sonatype/nexus-public)
 
 **Avantages:**
@@ -373,7 +373,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Harbor
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen">  
 ![License](https://img.shields.io/github/license/goharbor/harbor)
 
 **Avantages:**
@@ -393,7 +393,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Terraform
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Terraform Cloud)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(Terraform%20Cloud)-blue">  
 ![License](https://img.shields.io/github/license/hashicorp/terraform)
 
 **Avantages:**
@@ -410,7 +410,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### CloudFormation
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(AWS)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(AWS)-blue">
 
 **Avantages:**
 - Natif AWS
@@ -426,7 +426,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Azure Bicep
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Azure)*  
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue">  
 ![License](https://img.shields.io/github/license/azure/bicep)
 
 **Avantages:**
@@ -444,7 +444,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Google Cloud Deployment Manager
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GCP)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GCP)-blue">
 
 **Avantages:**
 - Natif GCP
@@ -461,7 +461,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Pulumi
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Pulumi Cloud)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(Pulumi%20Cloud)-blue">  
 ![License](https://img.shields.io/github/license/pulumi/pulumi)
 
 **Avantages:**
@@ -477,7 +477,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Ansible
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Ansible Tower/AWX)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(Ansible%20Tower%2FAWX)-blue">  
 ![License](https://img.shields.io/github/license/ansible/ansible)
 
 **Avantages:**
@@ -495,14 +495,14 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Docker
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen">  
 ![License](https://img.shields.io/github/license/moby/moby)
 
 **Standard:** Incontournable pour la conteneurisation
 
 ### Podman
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen">  
 ![License](https://img.shields.io/github/license/containers/podman)
 
 **Avantages:**
@@ -521,7 +521,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Kubernetes
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(EKS, GKE, AKS)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(EKS%2C%20GKE%2C%20AKS)-blue">  
 ![License](https://img.shields.io/github/license/kubernetes/kubernetes)
 
 **Avantages:**
@@ -539,7 +539,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Amazon ECS/EKS
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(AWS)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(AWS)-blue">
 
 **Avantages:**
 - Intégration AWS native
@@ -554,7 +554,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Azure Container Instances / AKS
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Azure)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue">
 
 **Avantages:**
 - Intégration Azure native
@@ -570,7 +570,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Google Cloud Run / GKE
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GCP)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GCP)-blue">
 
 **Avantages:**
 - Cloud Run serverless pour conteneurs
@@ -586,7 +586,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Docker Swarm
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen">  
 ![License](https://img.shields.io/github/license/moby/moby)
 
 **Avantages:**
@@ -604,7 +604,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Prometheus + Grafana
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Grafana Cloud)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(Grafana%20Cloud)-blue">  
 ![Prometheus License](https://img.shields.io/github/license/prometheus/prometheus)
 ![Grafana License](https://img.shields.io/github/license/grafana/grafana)
 
@@ -622,7 +622,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Datadog
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+<img src="https://img.shields.io/badge/Hosting-SaaS-blue">
 
 **Avantages:**
 - Tout-en-un (metrics, logs, traces, APM)
@@ -638,7 +638,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### New Relic
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+<img src="https://img.shields.io/badge/Hosting-SaaS-blue">
 
 **Avantages:**
 - APM excellent
@@ -653,7 +653,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### ELK Stack (Elasticsearch, Logstash, Kibana)
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Elastic Cloud)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(Elastic%20Cloud)-blue">  
 ![License](https://img.shields.io/github/license/elastic/elasticsearch)
 
 **Avantages:**
@@ -669,7 +669,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### CloudWatch (AWS)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(AWS)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(AWS)-blue">
 
 **Avantages:**
 - Natif AWS
@@ -684,7 +684,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Azure Monitor
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Azure)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue">
 
 **Avantages:**
 - Intégration Azure native
@@ -700,7 +700,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Google Cloud Monitoring (ex-Stackdriver)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GCP)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GCP)-blue">
 
 **Avantages:**
 - Intégration GCP native
@@ -718,7 +718,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### HashiCorp Vault
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(HCP Vault)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(HCP%20Vault)-blue">  
 ![License](https://img.shields.io/github/license/hashicorp/vault)
 
 **Avantages:**
@@ -735,7 +735,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### AWS Secrets Manager
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(AWS)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(AWS)-blue">
 
 **Avantages:**
 - Natif AWS
@@ -751,7 +751,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Azure Key Vault
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Azure)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue">
 
 **Avantages:**
 - Natif Azure
@@ -765,7 +765,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Sealed Secrets (Kubernetes)
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen">  
 ![License](https://img.shields.io/github/license/bitnami-labs/sealed-secrets)
 
 **Avantages:**
@@ -781,7 +781,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 ### Google Secret Manager
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(GCP)*
+<img src="https://img.shields.io/badge/Hosting-SaaS%20(GCP)-blue">
 
 **Avantages:**
 - Intégration GCP native
@@ -801,7 +801,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 #### SonarQube
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(SonarCloud)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(SonarCloud)-blue">  
 ![License](https://img.shields.io/github/license/SonarSource/sonarqube)
 
 **Avantages:**
@@ -818,7 +818,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 #### Snyk
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)
+<img src="https://img.shields.io/badge/Hosting-SaaS-blue">
 
 **Avantages:**
 - Focus développeur
@@ -835,7 +835,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 
 #### Trivy
 
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue) *(Aqua)*  
+<img src="https://img.shields.io/badge/Hosting-Self--hosted-brightgreen"> <img src="https://img.shields.io/badge/Hosting-SaaS%20(Aqua)-blue">  
 ![License](https://img.shields.io/github/license/aquasecurity/trivy)
 
 **Avantages:**
