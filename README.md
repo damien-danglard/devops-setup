@@ -198,6 +198,8 @@ Ce guide est conçu pour être un document vivant. Les contributions sont bienve
 3. Ajoutez ou améliorez la documentation
 4. Soumettez une Pull Request
 
+Pour plus de détails, consultez notre [Guide de Contribution](CONTRIBUTING.md).
+
 ### Domaines de Contribution
 - Ajout d'exemples concrets
 - Mise à jour des outils (nouveaux outils, nouvelles versions)
@@ -205,11 +207,17 @@ Ce guide est conçu pour être un document vivant. Les contributions sont bienve
 - Corrections et améliorations
 - Retours d'expérience
 
+### Code de Conduite
+Ce projet adhère à un [Code de Conduite](CODE_OF_CONDUCT.md) pour assurer un environnement accueillant pour tous les contributeurs.
+
 ## 📊 Structure du Repository
 
 ```
 devops-setup/
 ├── README.md                  # Ce fichier - Vue d'ensemble
+├── LICENSE                    # Licence MIT
+├── CONTRIBUTING.md            # Guide de contribution
+├── CODE_OF_CONDUCT.md         # Code de conduite
 ├── CHECKLIST.md              # Checklist complète par phase
 ├── TOOLS_GUIDE.md            # Guide de sélection des outils
 ├── ARCHITECTURE_GUIDE.md     # Patterns et infrastructure
@@ -242,7 +250,7 @@ devops-setup/
 
 ## 📝 Licence
 
-Ce guide est fourni "tel quel" sous licence MIT. Libre à vous de l'utiliser, le modifier et le redistribuer.
+Ce guide est fourni "tel quel" sous [licence MIT](LICENSE). Libre à vous de l'utiliser, le modifier et le redistribuer.
 
 ## ⭐ Support
 
