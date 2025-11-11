@@ -175,7 +175,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 ### GitLab CI/CD
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/gitlab/license/gitlab-org%2Fgitlab-foss) ![License](https://img.shields.io/badge/License-Proprietary%20(EE)-red)
+![License](https://img.shields.io/gitlab/license/gitlab-org%2Fgitlab-foss?label=License%20(CE)) ![License](https://img.shields.io/badge/License%20(EE)-Proprietary-red)
 
 **Avantages:**
 - Très puissant et flexible
@@ -365,7 +365,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 ### Sonatype Nexus
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/github/license/sonatype/nexus-public) ![License](https://img.shields.io/badge/License-Proprietary-red)
+![License](https://img.shields.io/github/license/sonatype/nexus-public?label=License%20(CE)) ![License](https://img.shields.io/badge/License%20(Pro)-Proprietary-red)
 
 **Avantages:**
 - Support multi-format
@@ -737,7 +737,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 ### HashiCorp Vault
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(HCP%20Vault)-blue)  
-![License](https://img.shields.io/github/license/hashicorp/vault) ![License](https://img.shields.io/badge/License-Proprietary-red)
+![License](https://img.shields.io/github/license/hashicorp/vault?label=License%20(CE)) ![License](https://img.shields.io/badge/License%20(Enterprise)-Proprietary-red)
 
 **Avantages:**
 - Très sécurisé
@@ -823,7 +823,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 #### SonarQube
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(SonarCloud)-blue)  
-![License](https://img.shields.io/github/license/SonarSource/sonarqube) ![License](https://img.shields.io/badge/License-Proprietary-red)
+![License](https://img.shields.io/github/license/SonarSource/sonarqube?label=License%20(Community)) ![License](https://img.shields.io/badge/License%20(Enterprise)-Proprietary-red)
 
 **Avantages:**
 - Très complet
