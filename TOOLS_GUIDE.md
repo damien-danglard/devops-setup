@@ -279,7 +279,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 ### GitLab Container Registry
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/github/license/gitlabhq/gitlabhq)
+![License](https://img.shields.io/github/license/gitlab-org%2Fgitlab-foss)
 
 **Avantages:**
 - Intégré à GitLab
