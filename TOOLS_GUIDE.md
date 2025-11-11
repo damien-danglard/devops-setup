@@ -92,7 +92,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 **Cas d'usage:** Équipes distribuées, projets complexes, standardisation environnement
 
 **Configuration exemple:**
-```json
+```jsonc
 // .devcontainer/devcontainer.json
 {
   "name": "Mon Projet",
