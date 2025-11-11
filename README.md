@@ -266,6 +266,6 @@ Si ce guide vous a été utile:
 
 ---
 
-**Dernière mise à jour:** 2025-11
+**Dernière mise à jour:** Novembre 2025
 **Mainteneur:** Damien Danglard
 **Version:** 1.0.0
