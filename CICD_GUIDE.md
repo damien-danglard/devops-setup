@@ -399,11 +399,7 @@ spec:
   hosts:
   - app.example.com
   http:
-  - match:
-    - headers:
-        user-agent:
-          regex: ".*Chrome.*"
-    route:
+  - route:
     - destination:
         host: app-v2
       weight: 10
