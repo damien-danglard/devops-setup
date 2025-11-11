@@ -84,7 +84,7 @@ We welcome suggestions for:
 - **Language**: Content is in French. Maintain consistency with the existing language and tone.
 - **Formatting**: Use Markdown formatting consistently
   - Use `#` for main titles, `##` for sections, `###` for subsections
-  - Use code blocks with language specification: ```bash, ```yaml, ```javascript
+  - Use code blocks with appropriate language specification (`bash`, `yaml`, `javascript`, etc.)
   - Use bullet points for lists
   - Use tables for comparisons
 - **Structure**: Follow the existing structure in each guide
