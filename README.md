@@ -38,12 +38,24 @@ Une checklist détaillée couvrant toutes les phases:
 
 Comparaisons détaillées et recommandations pour:
 - Gestion de version (GitHub, GitLab, Bitbucket)
+- Environnement de développement (Dev Containers, Codespaces, GitPod)
 - CI/CD (GitHub Actions, GitLab CI, Jenkins, CircleCI)
 - Infrastructure as Code (Terraform, CloudFormation, Pulumi)
 - Orchestration (Kubernetes, ECS, Docker Swarm)
 - Monitoring (Prometheus, Datadog, New Relic)
 - Gestion des secrets (Vault, AWS Secrets Manager)
 - Sécurité (SonarQube, Snyk, Trivy)
+
+### [💻 TOOLS/IDE_GUIDE.md](TOOLS/IDE_GUIDE.md)
+**Guide détaillé des environnements de développement**
+
+Guide complet sur:
+- IDEs et éditeurs (VS Code, JetBrains, Vim/Neovim)
+- Dev Containers (configuration avancée, Docker Compose)
+- Environnements à distance (Codespaces, GitPod, Remote SSH)
+- Extensions et plugins essentiels
+- Configuration locale et synchronisation
+- Best practices et standardisation d'équipe
 
 ### [🏗️ ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md)
 **Guide d'architecture et infrastructure**
@@ -223,7 +235,9 @@ devops-setup/
 ├── ARCHITECTURE_GUIDE.md     # Patterns et infrastructure
 ├── CICD_GUIDE.md             # CI/CD et déploiement
 ├── MONITORING_GUIDE.md       # Observabilité complète
-└── SECURITY_GUIDE.md         # Sécurité DevSecOps
+├── SECURITY_GUIDE.md         # Sécurité DevSecOps
+└── TOOLS/
+    └── IDE_GUIDE.md          # Guide des environnements de développement
 ```
 
 ## 🔗 Ressources Complémentaires
