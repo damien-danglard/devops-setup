@@ -552,7 +552,7 @@ GitHub Codespaces est un environnement de développement cloud basé sur des dev
 ```
 
 #### Tarification (2024)
-> **Note : Les informations de tarification ci-dessous sont basées sur les données de 2024. Veuillez vérifier les tarifs actuels, car ils peuvent avoir changé depuis.**
+> **Note : Les informations de tarification ci-dessous sont basées sur les données de 2024 (documenté en 2025). Veuillez vérifier les tarifs actuels, car ils peuvent avoir changé depuis.**
 
 - **Gratuit**: 60 heures/mois pour comptes personnels
 - **Pro**: 90 heures/mois incluses
