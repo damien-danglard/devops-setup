@@ -8,9 +8,11 @@
     // Disable some rules that are too strict for existing documentation
     "MD013": false,  // Line length - many existing lines are longer than 80 chars
     "MD022": false,  // Headings should be surrounded by blank lines
+    "MD024": false,  // Duplicate headings - needed when referencing sections
     "MD031": false,  // Fenced code blocks should be surrounded by blank lines
     "MD032": false,  // Lists should be surrounded by blank lines
     "MD040": false,  // Fenced code blocks should have a language specified
+    "MD060": false,  // Table column style - emoji characters cause false positives
   },
   
   // Ignore node_modules and hidden directories

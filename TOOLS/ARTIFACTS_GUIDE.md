@@ -889,13 +889,7 @@ Service AWS managé pour artefacts multi-format.
 - Multi-format pour applications AWS
 - Besoin d'intégration IAM
 
-### Azure Artifacts
-
-(Voir section NuGet ci-dessus)
-
-### Google Artifact Registry
-
-(Voir section Registres de Conteneurs ci-dessus)
+**Note**: Pour Azure Artifacts, voir la section NuGet ci-dessus. Pour Google Artifact Registry, voir la section Registres de Conteneurs ci-dessus.
 
 ## Comparaison et Matrice de Décision
 
@@ -1249,7 +1243,7 @@ Avantages:
 **Configuration Nexus proxy npm**:
 
 1. Créer repository "npm-proxy" (type: proxy)
-2. URL remote: https://registry.npmjs.org
+2. URL remote: `https://registry.npmjs.org`
 3. Créer repository "npm-group" (group)
 4. Members: npm-proxy + npm-hosted
 
