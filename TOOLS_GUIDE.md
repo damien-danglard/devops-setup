@@ -71,87 +71,30 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ## Environnement de Développement
 
-### Dev Containers
+> **💡 Pour un guide détaillé et complet sur les environnements de développement, IDEs, dev containers et développement à distance, consultez [TOOLS/IDE_GUIDE.md](TOOLS/IDE_GUIDE.md)**
+
+### Résumé des Options Principales
+
+**IDEs Populaires:**
+- **VS Code**: Léger, extensible, gratuit, excellent pour web et DevOps
+- **JetBrains IDEs**: Puissants, refactoring avancé, payants mais complets
+- **Vim/Neovim**: Performance maximale, courbe d'apprentissage élevée
+
+**Dev Containers:**
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted%20(VSCode%2C%20GitHub%20Codespaces)-brightgreen)  
 ![License](https://img.shields.io/github/license/microsoft/vscode-dev-containers)
 
-**Description:** Environnements de développement conteneurisés standardisés
-
-**Avantages:**
-- Environnement reproductible et cohérent
-- Onboarding rapide des nouveaux développeurs
-- Configuration as code (.devcontainer)
-- Support multi-IDE (VSCode, GitHub Codespaces, JetBrains)
-- Isolation complète par projet
-
-**Inconvénients:**
-- Nécessite Docker
-- Performance légèrement réduite (surtout sur Windows/Mac)
-- Courbe d'apprentissage initiale
+Environnements de développement conteneurisés standardisés garantissant la reproductibilité et l'onboarding rapide.
 
 **Cas d'usage:** Équipes distribuées, projets complexes, standardisation environnement
 
-**Configuration exemple:**
-```jsonc
-// .devcontainer/devcontainer.json
-{
-  "name": "Mon Projet",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ]
-    }
-  },
-  "postCreateCommand": "npm install",
-  "forwardPorts": [3000]
-}
-```
+**Développement à Distance:**
+- **GitHub Codespaces**: Cloud IDE sur GitHub
+- **GitPod**: Alternative open source multi-plateforme
+- **VS Code Remote**: SSH, WSL, Containers
 
-### GitHub Codespaces
-
-![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
-
-**Description:** Dev containers dans le cloud
-
-**Avantages:**
-- Pas besoin de machine locale puissante
-- Setup instantané
-- Intégration GitHub native
-- Préconfiguré avec devcontainers
-
-**Inconvénients:**
-- Coût mensuel (heures d'utilisation)
-- Dépendant de la connexion internet
-- GitHub uniquement
-
-**Cas d'usage:** Développement cloud-native, équipes distribuées, machines locales limitées
-
-### GitPod
-
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/github/license/gitpod-io/gitpod)
-
-**Description:** Alternative à GitHub Codespaces, multi-plateforme
-
-**Avantages:**
-- Support GitHub, GitLab, Bitbucket
-- Open source (self-hosted possible)
-- Configuration as code (.gitpod.yml)
-- Snapshots d'environnement
-
-**Inconvénients:**
-- Moins intégré que Codespaces
-- Coût pour usage intensif
-
-**Cas d'usage:** Multi-plateformes Git, besoin self-hosted
+Pour plus de détails sur la configuration, les best practices et des exemples complets, voir le [Guide IDE complet](TOOLS/IDE_GUIDE.md)
 
 ## CI/CD
 
@@ -241,163 +184,47 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ## Registres d'Artifacts
 
+> **💡 Pour un guide détaillé et complet sur les registres d'artefacts (Docker/OCI, Maven, npm, PyPI, etc.) avec tableaux comparatifs et best practices, consultez [TOOLS/ARTIFACTS_GUIDE.md](TOOLS/ARTIFACTS_GUIDE.md)**
+
 Les registres d'artifacts stockent et gèrent vos packages, images Docker, et autres artifacts de build.
 
-### Docker Hub
+### Catégories Principales
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
+**Registres de Conteneurs (Docker/OCI):**
+- **Docker Hub**: Standard de facto, gratuit pour public, rate limiting
+- **GHCR**: Intégration GitHub native, pas de rate limiting
+- **GitLab CR**: Self-hosted ou cloud, scan de sécurité (Premium+)
+- **Harbor**: Open source CNCF, riche en fonctionnalités sécurité
+- **Cloud providers**: ACR (Azure), ECR (AWS), Artifact Registry (GCP)
 
-**Avantages:**
-- Standard de facto pour images Docker
-- Gratuit pour repos publics
-- Intégration facile
-- Large bibliothèque d'images publiques
+**Registres Universels Multi-Format:**
+- **JFrog Artifactory**: Enterprise-grade, 30+ formats, coûteux
+- **Sonatype Nexus**: Alternative moins chère, version OSS disponible
 
-**Inconvénients:**
-- Rate limiting sur plan gratuit
-- Fonctionnalités limitées version gratuite
-- Pas de support multi-format
+**Registres Spécifiques par Langage:**
+- **Maven**: Maven Central (public), Artifactory/Nexus (privé)
+- **npm**: npmjs.com (public), Verdaccio (proxy self-hosted)
+- **PyPI**: pypi.org (public), devpi (self-hosted)
+- **NuGet**: nuget.org (public), Azure Artifacts (privé)
+- **Go**: proxy.golang.org (public), Athens (self-hosted)
 
-**Cas d'usage:** Images Docker publiques, petits projets
+### Choix Rapide par Cas d'Usage
 
-### GitHub Container Registry (GHCR)
+**Petits projets / Startups:**
+- Docker Hub ou GHCR pour conteneurs
+- Registres publics pour autres formats (npm, PyPI, etc.)
 
-![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(GitHub)-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
+**Équipes moyennes:**
+- Cloud provider registry si infrastructure cloud
+- Nexus OSS pour self-hosted multi-format
+- Harbor pour Kubernetes
 
-**Avantages:**
-- Intégration native GitHub
-- Gratuit pour repos publics
-- Support OCI images
-- Bon pour GitHub Actions
+**Entreprises:**
+- Artifactory pour solution complète
+- Nexus Pro comme alternative
+- Harbor + cloud provider pour hybride
 
-**Inconvénients:**
-- Limité à l'écosystème GitHub
-- Moins de fonctionnalités qu'Artifactory
-
-**Cas d'usage:** Projets GitHub, images Docker
-
-### GitLab Container Registry
-
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/gitlab/license/gitlab-org%2Fgitlab-foss?label=License%20(CE)) ![License](https://img.shields.io/badge/License%20(EE)-Proprietary-red)
-
-**Avantages:**
-- Intégré à GitLab
-- Gratuit en self-hosted
-- Support multi-format
-- Scan de vulnérabilités intégré
-
-**Inconvénients:**
-- Performances variables
-- Fonctionnalités avancées limitées
-
-**Cas d'usage:** Projets GitLab, self-hosted
-
-### Azure Container Registry (ACR)
-
-![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(Azure)-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
-
-**Avantages:**
-- Intégration Azure native
-- Geo-replication
-- Scan de sécurité intégré
-- Support multi-format (Docker, Helm, OCI)
-
-**Inconvénients:**
-- Coûts pour stockage et transfert
-- Azure uniquement
-
-**Cas d'usage:** Projets Azure, geo-distribution
-
-### Amazon Elastic Container Registry (ECR)
-
-![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(AWS)-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
-
-**Avantages:**
-- Intégration AWS native (ECS, EKS)
-- Scan de vulnérabilités
-- Réplication cross-region
-- IAM integration
-
-**Inconvénients:**
-- AWS uniquement
-- Coûts de stockage et transfert
-
-**Cas d'usage:** Projets AWS, intégration ECS/EKS
-
-### Google Artifact Registry
-
-![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(GCP)-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
-
-**Avantages:**
-- Support multi-format (Docker, Maven, npm, Python, etc.)
-- Remplace Container Registry
-- Intégration GCP native
-- Scan de vulnérabilités
-
-**Inconvénients:**
-- GCP uniquement
-- Migration depuis Container Registry nécessaire
-
-**Cas d'usage:** Projets GCP, multi-format
-
-### JFrog Artifactory
-
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/badge/License-Proprietary-red)
-
-**Avantages:**
-- Support universel (tous types de packages)
-- Très complet et mature
-- HA et geo-replication
-- Excellent pour grandes entreprises
-
-**Inconvénients:**
-- Coûteux
-- Complexe à configurer
-- Peut être overkill pour petits projets
-
-**Cas d'usage:** Entreprises, multi-format, besoins avancés
-
-### Sonatype Nexus
-
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS-blue)  
-![License](https://img.shields.io/github/license/sonatype/nexus-public?label=License%20(CE)) ![License](https://img.shields.io/badge/License%20(Pro)-Proprietary-red)
-
-**Avantages:**
-- Support multi-format
-- Version open source disponible
-- Mature et stable
-- Bon rapport qualité/prix
-
-**Inconvénients:**
-- Interface moins moderne
-- Configuration peut être complexe
-
-**Cas d'usage:** Self-hosted, budget limité, multi-format
-
-### Harbor
-
-![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen)  
-![License](https://img.shields.io/github/license/goharbor/harbor)
-
-**Avantages:**
-- Open source (CNCF)
-- Excellent pour Kubernetes
-- Scan de sécurité intégré (Trivy, Clair)
-- Signature d'images (Notary)
-- Réplication multi-registry
-
-**Inconvénients:**
-- Setup et maintenance requis
-- Principalement orienté conteneurs
-
-**Cas d'usage:** Kubernetes, sécurité importante, self-hosted
+Pour le guide complet incluant la configuration, la sécurité, les tableaux comparatifs détaillés et les best practices, voir [TOOLS/ARTIFACTS_GUIDE.md](TOOLS/ARTIFACTS_GUIDE.md)
 
 ## Infrastructure as Code
 
