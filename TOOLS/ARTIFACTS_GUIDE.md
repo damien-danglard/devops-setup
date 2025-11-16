@@ -912,19 +912,24 @@ Service AWS managé pour artefacts multi-format.
 
 ### Tableau Comparatif par Fonctionnalité
 
-| Registre | Scan Sécurité | Geo-Replication | RBAC | Cleanup Policies | Proxy Cache | API | Prix |
-|----------|--------------|-----------------|------|-----------------|-------------|-----|------|
-| **Docker Hub** | ⚠️ Limité | ❌ | ⚠️ Basique | ❌ | ❌ | ✅ | $ |
-| **GHCR** | ⚠️ Payant | ❌ | ✅ | ❌ | ❌ | ✅ | $ |
-| **GitLab CR** | ✅ Premium | ❌ | ✅ | ✅ | ⚠️ | ✅ | $$ |
-| **ACR** | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | $$$ |
-| **ECR** | ✅ | ✅ | ✅ (IAM) | ✅ | ❌ | ✅ | $$ |
-| **Google AR** | ✅ | ✅ | ✅ (IAM) | ✅ | ❌ | ✅ | $$ |
-| **Harbor** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Gratuit (self) |
-| **Artifactory** | ✅ Xray | ✅ | ✅ | ✅ | ✅ | ✅ | $$$$ |
-| **Nexus** | ✅ Pro | ⚠️ | ✅ | ✅ | ✅ | ✅ | $$ (OSS gratuit) |
-| **Azure Artifacts** | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | $$ |
-| **AWS CodeArtifact** | ❌ | ❌ | ✅ (IAM) | ⚠️ | ✅ | ✅ | $$ |
+| Registre | Scan Sécurité | Geo-Replication | RBAC | Cleanup Policies | Proxy Cache | Block/Quarantine | API | Prix |
+|----------|--------------|-----------------|------|-----------------|-------------|------------------|-----|------|
+| **Docker Hub** | ⚠️ Limité | ❌ | ⚠️ Basique | ❌ | ❌ | ❌ | ✅ | $ |
+| **GHCR** | ⚠️ Payant | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | $ |
+| **GitLab CR** | ✅ Premium | ❌ | ✅ | ✅ | ⚠️ | ⚠️ | ✅ | $$ |
+| **ACR** | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | $$$ |
+| **ECR** | ✅ | ✅ | ✅ (IAM) | ✅ | ❌ | ✅ | ✅ | $$ |
+| **Google AR** | ✅ | ✅ | ✅ (IAM) | ✅ | ❌ | ✅ | ✅ | $$ |
+| **Harbor** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Gratuit (self) |
+| **Artifactory** | ✅ Xray | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | $$$$ |
+| **Nexus** | ✅ Pro | ⚠️ | ✅ | ✅ | ✅ | ✅ | ✅ | $$ (OSS gratuit) |
+| **Azure Artifacts** | ❌ | ❌ | ✅ | ✅ | ✅ | ⚠️ | ✅ | $$ |
+| **AWS CodeArtifact** | ❌ | ❌ | ✅ (IAM) | ⚠️ | ✅ | ⚠️ | ✅ | $$ |
+
+**Légende:**
+- **Proxy Cache**: Capacité à mettre en cache des dépôts publics (npm, Maven Central, PyPI, etc.) pour améliorer les performances et éviter le rate limiting
+- **Block/Quarantine**: Capacité à bloquer ou mettre en quarantaine des artefacts spécifiques pour des raisons de sécurité (packages corrompus, vulnérabilités critiques)
+- ✅ = Support complet, ⚠️ = Support partiel ou via configuration, ❌ = Non supporté
 
 ### Matrice de Sélection par Cas d'Usage
 
