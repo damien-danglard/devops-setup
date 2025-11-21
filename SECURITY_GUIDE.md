@@ -349,6 +349,7 @@ updates:
     groups:
       dev-dependencies:
         dependency-type: "development"
+      minor-patch-updates:
         update-types: ["minor", "patch"]
   
   # Docker
