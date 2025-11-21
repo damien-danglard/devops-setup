@@ -202,6 +202,8 @@ updates:
 ```yaml
 # .github/workflows/dependabot-auto-merge.yml
 name: Dependabot Auto-Merge
+# Use `pull_request_target` to allow access to secrets for PR merge operations (required for Dependabot auto-merge).
+# This is necessary because the default `pull_request` trigger does not provide access to secrets for security reasons.
 on: pull_request_target
 
 permissions:
