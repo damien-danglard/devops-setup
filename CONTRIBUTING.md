@@ -57,7 +57,7 @@ We welcome suggestions for:
    git add .
    git commit -m "Brief description of your changes"
    ```
-   
+
    Follow these commit message guidelines:
    - Use the imperative mood ("Add feature" not "Added feature")
    - Keep the first line under 50 characters (72 maximum)
