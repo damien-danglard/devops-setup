@@ -847,7 +847,7 @@ resource "kubernetes_pod" "main" {
   spec {
     container {
       name  = "dev"
-      image = "codercom/enterprise-base:ubuntu"
+      image = "ubuntu:22.04"
       
       command = ["sh", "-c", coder_agent.main.init_script]
       

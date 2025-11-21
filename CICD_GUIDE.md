@@ -166,10 +166,6 @@ updates:
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
-    # Auto-merge configuration (requires GitHub Actions)
-    allow:
-      - dependency-type: "direct"
-        update-type: "security:patch"
     # Ignore specific dependencies
     ignore:
       - dependency-name: "old-library"
