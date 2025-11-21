@@ -973,7 +973,7 @@ kind: Space
 metadata:
   name: dev-space
 spec:
-  sleepAfter: 3600  # 1 hour d'inactivité
+  sleepAfter: 3600  # 1 heure d'inactivité
   deleteAfter: 86400  # Supprimer après 24h
   
   account:
