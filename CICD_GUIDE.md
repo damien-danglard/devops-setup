@@ -133,9 +133,110 @@ sast:
 ```yaml
 dependencies:
   - Snyk
-  - Dependabot
+  - Dependabot (GitHub native)
   - npm audit / pip-audit
   - OWASP Dependency-Check
+```
+
+**GitHub Dependabot Configuration:**
+
+Dependabot automatise la détection et la mise à jour des dépendances vulnérables:
+
+```yaml
+# .github/dependabot.yml
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "security-team"
+      - "tech-leads"
+    assignees:
+      - "maintainer"
+    labels:
+      - "dependencies"
+      - "security"
+    # Commit message preferences
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    # Ignore specific dependencies
+    ignore:
+      - dependency-name: "old-library"
+        versions: ["1.x"]
+  
+  # Python dependencies
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Groups feature requires Dependabot v2 (available by default on GitHub.com)
+    # dependency-type filters by dev/production dependencies
+    groups:
+      # Group dev dependencies together
+      dev-dependencies:
+        patterns:
+          - "pytest*"
+          - "black"
+          # Add other dev dependency patterns
+      # Group production dependencies
+      production-dependencies:
+        patterns:
+          - "django*"
+          - "requests"
+          # Add other production dependency patterns
+  
+  # Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+```
+
+**Dependabot Auto-merge (GitHub Actions):**
+
+```yaml
+# .github/workflows/dependabot-auto-merge.yml
+name: Dependabot Auto-Merge
+# Use `pull_request_target` to allow access to secrets for PR merge operations (required for Dependabot auto-merge).
+# This is necessary because the default `pull_request` trigger does not provide access to secrets for security reasons.
+on: pull_request_target
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.6.0
+        
+      - name: Auto-merge for patch and minor updates
+        if: |
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        # Note: gh CLI is pre-installed on GitHub-hosted ubuntu-latest runners
+        # For self-hosted runners, ensure gh is installed or use actions/github-script instead
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 **Secret Scanning:**
