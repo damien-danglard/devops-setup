@@ -181,10 +181,16 @@ updates:
     groups:
       # Group dev dependencies together
       dev-dependencies:
-        dependency-type: "development"
+        patterns:
+          - "pytest*"
+          - "black"
+          # Add other dev dependency patterns
       # Group production dependencies
       production-dependencies:
-        dependency-type: "production"
+        patterns:
+          - "django*"
+          - "requests"
+          # Add other production dependency patterns
   
   # Docker
   - package-ecosystem: "docker"
