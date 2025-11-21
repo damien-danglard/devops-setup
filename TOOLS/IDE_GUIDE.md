@@ -839,6 +839,7 @@ resource "coder_agent" "main" {
   arch = "amd64"
 }
 
+data "coder_workspace" "me" {}
 resource "kubernetes_pod" "main" {
   metadata {
     name = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
