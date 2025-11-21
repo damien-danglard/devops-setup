@@ -11,6 +11,7 @@
     "MD024": false,  // Duplicate headings - needed when referencing sections
     "MD031": false,  // Fenced code blocks should be surrounded by blank lines
     "MD032": false,  // Lists should be surrounded by blank lines
+    "MD036": false,  // Emphasis used instead of a heading
     "MD040": false,  // Fenced code blocks should have a language specified
     "MD060": false,  // Table column style - emoji characters cause false positives
   },
