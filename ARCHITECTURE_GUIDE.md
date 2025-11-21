@@ -489,7 +489,7 @@ healthcheck:
 - Latence sur région passive
 - Ressources sous-utilisées
 
-### Considérations:
+### Considérations
 - Data residency et RGPD (GDPR)
 - Latence réseau inter-régions
 - Coûts de transfert de données
