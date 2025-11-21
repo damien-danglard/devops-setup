@@ -1389,7 +1389,7 @@ docker run --rm \
 
 #### Tests de Recovery
 
-- Tester restoration régulièrement (trim.)
+- Tester restoration régulièrement (trimestriellement)
 - Documenter procédure de recovery
 - RTO/RPO définis (Recovery Time/Point Objective)
 
