@@ -1119,7 +1119,7 @@ Service AWS managé pour artefacts multi-format.
 
 **Politiques de scan**:
 - Bloquer les images avec vulnérabilités CRITICAL
-- Alerter sur vulnerabilités HIGH
+- Alerter sur vulnérabilités HIGH
 - Scanner régulièrement les images existantes
 
 #### Signature d'Images
