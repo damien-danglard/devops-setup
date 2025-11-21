@@ -92,6 +92,9 @@ Environnements de développement conteneurisés standardisés garantissant la re
 **Développement à Distance:**
 - **GitHub Codespaces**: Cloud IDE sur GitHub
 - **GitPod**: Alternative open source multi-plateforme
+- **DevPod**: Client-only, multi-backend (K8s, Docker, Cloud)
+- **Coder**: Plateforme self-hosted enterprise avec Terraform
+- **Loft**: Virtual clusters Kubernetes pour dev teams
 - **VS Code Remote**: SSH, WSL, Containers
 
 Pour plus de détails sur la configuration, les best practices et des exemples complets, voir le [Guide IDE complet](TOOLS/IDE_GUIDE.md)

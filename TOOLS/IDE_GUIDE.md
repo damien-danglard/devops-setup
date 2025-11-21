@@ -684,6 +684,320 @@ gitpod workspace list
 gitpod workspace stop
 ```
 
+### DevPod
+
+![License](https://img.shields.io/github/license/loft-sh/devpod)  
+![Platform](https://img.shields.io/badge/Platform-Multi--cloud%20%7C%20Local-blue)
+
+**Description:**
+
+DevPod est un outil open source client-only pour créer des environnements de développement reproductibles sur n'importe quel backend (Kubernetes, AWS, GCP, Azure, Docker, SSH, etc.).
+
+**Avantages:**
+
+- **Client-Only**: Pas de serveur central requis, tout tourne sur votre machine
+- **Multi-Backend**: Kubernetes, Docker, AWS, GCP, Azure, SSH, et plus
+- **Compatible Dev Container**: Utilise le standard Dev Container
+- **Open Source**: Complètement gratuit et open source
+- **IDE Agnostic**: Support VS Code, JetBrains IDEs, et plus
+- **Local ou Remote**: Flexibilité totale pour choisir où exécuter
+- **Cost Effective**: Pas de frais de plateforme, seulement l'infrastructure
+
+**Inconvénients:**
+
+- **Setup initial**: Nécessite configuration des providers
+- **Moins intégré**: Pas d'intégration native avec Git providers comme Codespaces
+
+**Configuration:**
+
+DevPod utilise la spécification Dev Container standard:
+
+```json
+// .devcontainer/devcontainer.json
+{
+  "name": "My DevPod Environment",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  }
+}
+```
+
+**Utilisation:**
+
+```bash
+# Installer DevPod
+brew install devpod
+
+# Ou télécharger depuis https://devpod.sh
+
+# Créer un workspace depuis un repo Git
+devpod up github.com/owner/repo
+
+# Utiliser un provider spécifique (Kubernetes, Docker, etc.)
+devpod provider add kubernetes
+devpod up github.com/owner/repo --provider kubernetes
+
+# Lister les workspaces
+devpod list
+
+# Se connecter à un workspace
+devpod ssh my-workspace
+
+# Supprimer un workspace
+devpod delete my-workspace
+```
+
+**Providers supportés:**
+
+- Docker (local)
+- Kubernetes
+- AWS (EC2, EKS)
+- Google Cloud (GCE, GKE)
+- Azure (VM, AKS)
+- DigitalOcean
+- SSH (any remote server)
+
+**Cas d'Usage:**
+
+- Équipes voulant éviter le vendor lock-in
+- Développement sur infrastructure existante
+- Besoin de flexibilité multi-cloud
+- Alternative open source à Codespaces/GitPod
+- Environnements de dev standardisés sans serveur central
+
+### Coder
+
+![License](https://img.shields.io/github/license/coder/coder)  
+![Platform](https://img.shields.io/badge/Platform-Self--hosted-brightgreen)
+
+**Description:**
+
+Coder est une plateforme open source self-hosted pour créer des environnements de développement cloud accessibles via navigateur ou IDE local.
+
+**Avantages:**
+
+- **Self-Hosted**: Contrôle total de l'infrastructure
+- **Multi-Cloud**: AWS, GCP, Azure, Kubernetes, Docker
+- **Terraform-Based**: Infrastructure as Code pour les workspaces
+- **IDE Flexible**: VS Code (browser/desktop), JetBrains, Vim, etc.
+- **Enterprise Features**: RBAC, audit logs, quotas
+- **Cost Management**: Arrêt automatique, quotas de ressources
+- **Collaboration**: Shared workspaces, port forwarding
+
+**Inconvénients:**
+
+- **Self-hosted uniquement**: Nécessite infrastructure et maintenance
+- **Configuration initiale**: Plus complexe que solutions SaaS
+- **Courbe d'apprentissage**: Terraform templates à créer
+
+**Architecture:**
+
+```
+Developer ←→ Coder Server ←→ Workspaces (Kubernetes/Docker/VMs)
+              (Control Plane)    (Dev Environments)
+```
+
+**Installation:**
+
+```bash
+# Installation avec script
+curl -fsSL https://coder.com/install.sh | sh
+
+# Ou avec Helm sur Kubernetes
+helm repo add coder https://helm.coder.com
+helm install coder coder/coder
+
+# Démarrer le serveur
+coder server
+
+# Accès web: http://localhost:3000
+```
+
+**Template Exemple (Terraform):**
+
+```hcl
+# kubernetes-workspace.tf
+terraform {
+  required_providers {
+    coder = {
+      source = "coder/coder"
+    }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+    }
+  }
+}
+
+resource "coder_agent" "main" {
+  os   = "linux"
+  arch = "amd64"
+}
+
+resource "kubernetes_pod" "main" {
+  metadata {
+    name = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
+  }
+  
+  spec {
+    container {
+      name  = "dev"
+      image = "codercom/enterprise-base:ubuntu"
+      
+      command = ["sh", "-c", coder_agent.main.init_script]
+      
+      resources {
+        requests = {
+          cpu    = "2"
+          memory = "4Gi"
+        }
+      }
+    }
+  }
+}
+```
+
+**Utilisation:**
+
+```bash
+# CLI
+coder login https://coder.example.com
+
+# Créer workspace depuis template
+coder create my-workspace --template kubernetes-dev
+
+# Se connecter
+coder ssh my-workspace
+
+# VS Code
+coder code my-workspace
+
+# Port forwarding
+coder port-forward my-workspace --tcp 3000:3000
+
+# Lister workspaces
+coder list
+```
+
+**Cas d'Usage:**
+
+- Entreprises nécessitant contrôle total et self-hosting
+- Environnements hautement sécurisés
+- Besoin de compliance stricte
+- Gestion centralisée des environnements de dev
+- Optimisation des coûts cloud (auto-shutdown)
+
+### Loft
+
+![License](https://img.shields.io/badge/License-Mixed%20(CE%20%2B%20Enterprise)-orange)  
+![Platform](https://img.shields.io/badge/Platform-Kubernetes-blue)
+
+**Description:**
+
+Loft est une plateforme pour virtualiser les clusters Kubernetes et créer des environnements de développement isolés (vClusters, namespaces) avec gestion multi-tenancy.
+
+**Avantages:**
+
+- **Virtual Clusters (vClusters)**: Clusters Kubernetes virtuels isolés
+- **Multi-Tenancy**: Gestion des équipes, quotas, RBAC
+- **Cost Reduction**: Partage efficient des ressources
+- **Self-Service**: Développeurs créent leurs propres espaces
+- **Sleep Mode**: Économies avec hibernation automatique
+- **GitOps Ready**: Intégration ArgoCD, Flux
+- **IDE Integration**: VS Code, DevPod support
+
+**Inconvénients:**
+
+- **Kubernetes uniquement**: Nécessite un cluster K8s
+- **Complexité**: Courbe d'apprentissage Kubernetes
+- **Features Enterprise payantes**: Version CE limitée
+
+**Concepts Clés:**
+
+**Virtual Clusters (vClusters):**
+- Clusters K8s complets virtualisés dans un namespace
+- Isolation totale (API server dédié)
+- Pas besoin de nouveau cluster physique
+
+**Spaces:**
+- Namespaces améliorés avec gestion des accès
+- Quotas et limites de ressources
+- Hibernation automatique
+
+**Installation:**
+
+```bash
+# Installer Loft CLI
+curl -fsSL https://loft.sh/install.sh | sh
+
+# Déployer Loft sur cluster K8s
+loft start
+
+# Ou avec Helm
+helm repo add loft https://charts.loft.sh
+helm install loft loft/loft -n loft --create-namespace
+
+# Login
+loft login https://loft.example.com
+```
+
+**Créer un Virtual Cluster:**
+
+```bash
+# Créer vCluster
+loft create vcluster my-dev-cluster
+
+# Se connecter au vCluster
+loft use vcluster my-dev-cluster
+
+# Maintenant kubectl pointe vers le vCluster
+kubectl get pods
+
+# Utiliser avec DevPod
+devpod provider add loft
+devpod up github.com/owner/repo --provider loft
+```
+
+**Configuration Sleep Mode:**
+
+```yaml
+# loft.yaml
+apiVersion: management.loft.sh/v1
+kind: Space
+metadata:
+  name: dev-space
+spec:
+  sleepAfter: 3600  # 1 hour d'inactivité
+  deleteAfter: 86400  # Supprimer après 24h
+  
+  account:
+    name: dev-team
+  
+  objects: |
+    apiVersion: v1
+    kind: ResourceQuota
+    metadata:
+      name: dev-quota
+    spec:
+      hard:
+        requests.cpu: "10"
+        requests.memory: 20Gi
+```
+
+**Cas d'Usage:**
+
+- Équipes de développement sur Kubernetes
+- Multi-tenancy et gestion d'accès
+- Environnements de dev/test éphémères
+- Optimisation des coûts cloud (sleep mode)
+- Alternative à multiples clusters physiques
+- Preview environments pour chaque PR
+
 ### AWS Cloud9
 
 ![License](https://img.shields.io/badge/License-Proprietary-red)  
@@ -748,14 +1062,17 @@ Développez dans un container local:
 
 ### Comparaison des Environnements à Distance
 
-| Caractéristique | Codespaces | GitPod | Cloud9 | Remote SSH |
-|----------------|-----------|--------|--------|------------|
-| **Hébergement** | GitHub | Cloud/Self | AWS | Your server |
-| **Coût** | $$ | $$ | $ (EC2) | Gratuit |
-| **Setup** | Instantané | Instantané | Minutes | Minutes |
-| **Multi-IDE** | VS Code | Multi | Web only | VS Code |
-| **Offline** | Non | Non | Non | Non |
-| **Customisation** | Haute | Haute | Moyenne | Totale |
+| Caractéristique | Codespaces | GitPod | DevPod | Coder | Loft | Cloud9 | Remote SSH |
+|----------------|-----------|--------|---------|-------|------|--------|------------|
+| **Hébergement** | GitHub | Cloud/Self | Multi | Self-hosted | K8s | AWS | Your server |
+| **Coût** | $$ | $$ | $ (infra) | $ (infra) | $ (infra) | $ (EC2) | Gratuit |
+| **Setup** | Instantané | Instantané | Rapide | Complexe | Complexe | Minutes | Minutes |
+| **Multi-IDE** | VS Code | Multi | Multi | Multi | Multi | Web only | VS Code |
+| **Open Source** | Non | Oui | Oui | Oui | Partiel | Non | N/A |
+| **Offline** | Non | Non | Non | Non | Non | Non | Non |
+| **Vendor Lock-in** | GitHub | Faible | Aucun | Aucun | K8s | AWS | Aucun |
+| **Customisation** | Haute | Haute | Haute | Totale | Haute | Moyenne | Totale |
+| **Best For** | GitHub teams | Multi-platform | Flexibility | Enterprise | K8s teams | AWS devs | Simple remote |
 
 ## Extensions et Plugins Essentiels
 

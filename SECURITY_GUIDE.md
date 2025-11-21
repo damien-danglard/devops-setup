@@ -284,24 +284,169 @@ snyk test --file=requirements.txt
 ```
 
 **GitHub Dependabot:**
+
+Dependabot est l'outil natif GitHub pour la gestion automatique des dépendances et la détection de vulnérabilités.
+
+**Configuration complète:**
 ```yaml
 # .github/dependabot.yml
 version: 2
+
+# Registries privés (si nécessaire)
+registries:
+  npm-private:
+    type: npm-registry
+    url: https://npm.example.com
+    token: ${{secrets.NPM_TOKEN}}
+
 updates:
+  # npm/JavaScript
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"  # daily, weekly, monthly
+      time: "09:00"
+      timezone: "Europe/Paris"
     open-pull-requests-limit: 10
     reviewers:
       - "security-team"
+      - "tech-leads"
+    assignees:
+      - "maintainer"
     labels:
       - "dependencies"
       - "security"
-    # Auto-merge patch updates
-    allow:
-      - dependency-type: "direct"
-        update-type: "security:patch"
+    milestone: 1
+    
+    # Message de commit personnalisé
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+      include: "scope"
+    
+    # Ignorer certaines dépendances
+    ignore:
+      - dependency-name: "express"
+        versions: ["4.x", "5.x"]
+      - dependency-name: "lodash"
+        update-types: ["version-update:semver-major"]
+    
+    # Grouper les PRs similaires
+    groups:
+      # Grouper toutes les mises à jour de patch
+      production-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+  
+  # Python
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
+        update-types: ["minor", "patch"]
+  
+  # Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    
+  # Terraform
+  - package-ecosystem: "terraform"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    
+  # Composer (PHP)
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  
+  # Maven (Java)
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  
+  # Go modules
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
+
+**Dependabot Security Updates:**
+
+En plus des version updates, Dependabot envoie automatiquement des PRs pour les vulnérabilités:
+
+```yaml
+# Activé par défaut dans Settings > Security > Dependabot security updates
+# Crée automatiquement des PRs pour vulnérabilités CVE
+```
+
+**Auto-merge Workflow:**
+
+```yaml
+# .github/workflows/dependabot-auto-merge.yml
+name: Dependabot Auto-Merge
+
+on: pull_request_target
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1
+      
+      - name: Enable auto-merge for patch and minor
+        if: |
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Approve PR
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+**Monitoring Dependabot:**
+
+```bash
+# Via GitHub CLI
+gh api repos/{owner}/{repo}/dependabot/alerts
+
+# Filtrer par sévérité
+gh api repos/{owner}/{repo}/dependabot/alerts --jq '.[] | select(.security_advisory.severity=="high")'
+
+# Statistiques
+gh api repos/{owner}/{repo}/dependabot/alerts --jq 'group_by(.state) | map({state: .[0].state, count: length})'
 ```
 
 ### Politique de Dépendances
