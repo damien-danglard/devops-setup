@@ -417,7 +417,7 @@ jobs:
     steps:
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v1
+        uses: dependabot/fetch-metadata@v1.6.0
       
       - name: Enable auto-merge for patch and minor
         if: |
