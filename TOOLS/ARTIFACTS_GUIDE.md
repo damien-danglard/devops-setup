@@ -1481,5 +1481,5 @@ docker push harbor.company.com/myteam/myapp:1.0
 
 ---
 
-**Dernière mise à jour**: Novembre 2024  
+**Dernière mise à jour**: Novembre 2025  
 **Version**: 1.0.0
