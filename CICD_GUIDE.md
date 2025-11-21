@@ -206,7 +206,7 @@ updates:
 ```yaml
 # .github/workflows/dependabot-auto-merge.yml
 name: Dependabot Auto-Merge
-on: pull_request
+on: pull_request_target
 
 permissions:
   contents: write

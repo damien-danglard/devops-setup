@@ -297,7 +297,7 @@ registries:
   npm-private:
     type: npm-registry
     url: https://npm.example.com
-    token: ${{secrets.NPM_TOKEN}}
+    token: ${{ secrets.NPM_TOKEN }}
 
 updates:
   # npm/JavaScript
