@@ -176,6 +176,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Groups feature requires Dependabot v2 (available by default on GitHub.com)
+    # dependency-type filters by dev/production dependencies
     groups:
       # Group dev dependencies together
       dev-dependencies:
@@ -223,6 +225,8 @@ jobs:
         if: |
           steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
           steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        # Note: gh CLI is pre-installed on GitHub-hosted ubuntu-latest runners
+        # For self-hosted runners, ensure gh is installed or use actions/github-script instead
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
