@@ -75,8 +75,20 @@ Tout sur l'intégration et déploiement continus:
 - Principes fondamentaux
 - Pipeline CI (Linting, Testing, Security, Build)
 - Pipeline CD (Environnements, Variables, Smoke tests)
+- **Architecture des Environnements CD:**
+  - Environnements détaillés (DEV, INT, QA, UAT, STAGING, PROD)
+  - Stratégies par type de projet (Startup, Standard, Enterprise)
+  - Workflows de promotion et patterns
+  - Matrice de décision pour choisir sa stratégie
+  - Best practices et anti-patterns
 - Stratégies de déploiement (Rolling, Blue/Green, Canary)
 - Feature Flags
+- GitOps (Flux CD, ArgoCD, Jenkins X)
+- **Gestion On-Premise et Multi-Versions:**
+  - Contraintes déploiement on-premise vs cloud
+  - Maintenance multi-versions simultanées
+  - Impact sur architecture CD et équipe
+  - Stratégies optimisation et best practices
 - Exemples de configuration (GitHub Actions, GitLab CI)
 - Métriques et optimisation
 
@@ -101,6 +113,18 @@ Sécurité intégrée tout au long du cycle:
 - Sécurité de l'Infrastructure (IaC, Kubernetes, Cloud)
 - Gestion des Secrets (Vault, Sealed Secrets)
 - Compliance (RGPD, audit)
+
+### [🐄 PET_VS_CATTLE.md](PET_VS_CATTLE.md)
+**Philosophie d'infrastructure: Pets vs Cattle**
+
+Concept fondamental DevOps pour gestion d'infrastructure:
+- **Pets**: Serveurs uniques, configuration manuelle, maintenance intensive
+- **Cattle**: Serveurs interchangeables, automatisation, scalabilité
+- Transition Pet → Cattle: stratégie de migration complète
+- Patterns et best practices (Immutable Infrastructure, Auto-Healing)
+- Métriques de succès et KPIs
+- Culture et changement organisationnel
+- Anti-patterns à éviter
 
 ## 🚀 Démarrage Rapide
 
@@ -236,8 +260,10 @@ devops-setup/
 ├── CICD_GUIDE.md             # CI/CD et déploiement
 ├── MONITORING_GUIDE.md       # Observabilité complète
 ├── SECURITY_GUIDE.md         # Sécurité DevSecOps
+├── PET_VS_CATTLE.md          # Philosophie infrastructure (Pet vs Cattle)
 └── TOOLS/
-    └── IDE_GUIDE.md          # Guide des environnements de développement
+    ├── IDE_GUIDE.md          # Guide des environnements de développement
+    └── ARTIFACTS_GUIDE.md    # Guide de gestion des artifacts
 ```
 
 ## 🔗 Ressources Complémentaires
