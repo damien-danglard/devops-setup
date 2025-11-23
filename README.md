@@ -265,12 +265,6 @@ devops-setup/
     ├── IDE_GUIDE.md          # Guide des environnements de développement
     └── ARTIFACTS_GUIDE.md    # Guide de gestion des artifacts
 ```
-├── CICD_GUIDE.md             # CI/CD et déploiement
-├── MONITORING_GUIDE.md       # Observabilité complète
-├── SECURITY_GUIDE.md         # Sécurité DevSecOps
-└── TOOLS/
-    └── IDE_GUIDE.md          # Guide des environnements de développement
-```
 
 ## 🔗 Ressources Complémentaires
 
