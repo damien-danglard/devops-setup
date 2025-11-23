@@ -33,7 +33,7 @@ Une checklist détaillée couvrant toutes les phases:
 - Phase 11: Disaster Recovery
 - Phase 12: Mise en Production
 
-### [🛠️ TOOLS_GUIDE.md](TOOLS_GUIDE.md)
+### [🛠️ GUIDE/TOOLS.md](GUIDE/TOOLS.md)
 **Guide de sélection des outils DevOps**
 
 Comparaisons détaillées et recommandations pour:
@@ -46,7 +46,7 @@ Comparaisons détaillées et recommandations pour:
 - Gestion des secrets (Vault, AWS Secrets Manager)
 - Sécurité (SonarQube, Snyk, Trivy, Dependabot)
 
-### [💻 TOOLS/IDE_GUIDE.md](TOOLS/IDE_GUIDE.md)
+### [💻 GUIDE/TOOLS/IDE.md](GUIDE/TOOLS/IDE.md)
 **Guide détaillé des environnements de développement**
 
 Guide complet sur:
@@ -57,7 +57,7 @@ Guide complet sur:
 - Configuration locale et synchronisation
 - Best practices et standardisation d'équipe
 
-### [🏗️ ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md)
+### [🏗️ GUIDE/ARCHITECTURE.md](GUIDE/ARCHITECTURE.md)
 **Guide d'architecture et infrastructure**
 
 Couverture complète de:
@@ -68,7 +68,7 @@ Couverture complète de:
 - Scalabilité (Horizontal/Vertical, Auto-scaling, Caching, Load Balancing)
 - Architecture Multi-Région
 
-### [🚀 CICD_GUIDE.md](CICD_GUIDE.md)
+### [🚀 GUIDE/CICD.md](GUIDE/CICD.md)
 **Guide CI/CD complet**
 
 Tout sur l'intégration et déploiement continus:
@@ -92,7 +92,7 @@ Tout sur l'intégration et déploiement continus:
 - Exemples de configuration (GitHub Actions, GitLab CI)
 - Métriques et optimisation
 
-### [📊 MONITORING_GUIDE.md](MONITORING_GUIDE.md)
+### [📊 GUIDE/MONITORING.md](GUIDE/MONITORING.md)
 **Guide de monitoring et observabilité**
 
 Les trois piliers de l'observabilité:
@@ -102,7 +102,7 @@ Les trois piliers de l'observabilité:
 - **Alerting**: Configuration, on-call, runbooks
 - **SRE**: SLO/SLA, Error Budget
 
-### [🔒 SECURITY_GUIDE.md](SECURITY_GUIDE.md)
+### [🔒 GUIDE/SECURITY.md](GUIDE/SECURITY.md)
 **Guide de sécurité DevSecOps**
 
 Sécurité intégrée tout au long du cycle:
@@ -134,19 +134,19 @@ Concept fondamental DevOps pour gestion d'infrastructure:
    Ouvrez [CHECKLIST.md](CHECKLIST.md) et suivez les étapes
 
 2. **Choisissez vos outils**  
-   Consultez [TOOLS_GUIDE.md](TOOLS_GUIDE.md) pour faire vos choix
+   Consultez [GUIDE/TOOLS.md](GUIDE/TOOLS.md) pour faire vos choix
 
 3. **Définissez votre architecture**  
-   Lisez [ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md) pour les décisions architecturales
+   Lisez [GUIDE/ARCHITECTURE.md](GUIDE/ARCHITECTURE.md) pour les décisions architecturales
 
 4. **Configurez votre pipeline**  
-   Suivez [CICD_GUIDE.md](CICD_GUIDE.md) pour mettre en place CI/CD
+   Suivez [GUIDE/CICD.md](GUIDE/CICD.md) pour mettre en place CI/CD
 
 5. **Implémentez la sécurité**  
-   Appliquez [SECURITY_GUIDE.md](SECURITY_GUIDE.md) dès le début
+   Appliquez [GUIDE/SECURITY.md](GUIDE/SECURITY.md) dès le début
 
 6. **Configurez l'observabilité**  
-   Utilisez [MONITORING_GUIDE.md](MONITORING_GUIDE.md) pour metrics, logs, traces
+   Utilisez [GUIDE/MONITORING.md](GUIDE/MONITORING.md) pour metrics, logs, traces
 
 ### Par Taille de Projet
 
@@ -157,7 +157,7 @@ Concept fondamental DevOps pour gestion d'infrastructure:
 - Monitoring basique
 - Sécurité minimale mais présente
 
-→ Voir sections "Petite équipe" dans [TOOLS_GUIDE.md](TOOLS_GUIDE.md)
+→ Voir sections "Petite équipe" dans [GUIDE/TOOLS.md](GUIDE/TOOLS.md)
 
 #### 🏢 Entreprise (Complete Setup)
 **Focus: Sécurité et compliance**
@@ -175,17 +175,17 @@ Concept fondamental DevOps pour gestion d'infrastructure:
 - Documentation publique complète
 - Processus de contribution clair
 
-→ Voir section "Open Source" dans [TOOLS_GUIDE.md](TOOLS_GUIDE.md)
+→ Voir section "Open Source" dans [GUIDE/TOOLS.md](GUIDE/TOOLS.md)
 
 ## 📖 Ordre de Lecture Recommandé
 
 ### Pour Débutants en DevOps
 1. [CHECKLIST.md](CHECKLIST.md) - Vue d'ensemble
-2. [TOOLS_GUIDE.md](TOOLS_GUIDE.md) - Comprendre les options
-3. [CICD_GUIDE.md](CICD_GUIDE.md) - Premiers pipelines
-4. [SECURITY_GUIDE.md](SECURITY_GUIDE.md) - Bases de sécurité
-5. [MONITORING_GUIDE.md](MONITORING_GUIDE.md) - Observabilité
-6. [ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md) - Approfondissement
+2. [GUIDE/TOOLS.md](GUIDE/TOOLS.md) - Comprendre les options
+3. [GUIDE/CICD.md](GUIDE/CICD.md) - Premiers pipelines
+4. [GUIDE/SECURITY.md](GUIDE/SECURITY.md) - Bases de sécurité
+5. [GUIDE/MONITORING.md](GUIDE/MONITORING.md) - Observabilité
+6. [GUIDE/ARCHITECTURE.md](GUIDE/ARCHITECTURE.md) - Approfondissement
 
 ### Pour DevOps Expérimentés
 1. [CHECKLIST.md](CHECKLIST.md) - Validation de votre processus
@@ -194,7 +194,7 @@ Concept fondamental DevOps pour gestion d'infrastructure:
 
 ### Pour Décideurs/Managers
 1. [README.md](README.md) - Vue d'ensemble (ce fichier)
-2. Matrices de décision dans [TOOLS_GUIDE.md](TOOLS_GUIDE.md)
+2. Matrices de décision dans [GUIDE/TOOLS.md](GUIDE/TOOLS.md)
 3. Sections "Principes" et "Best Practices" de chaque guide
 
 ## 🎯 Cas d'Usage
@@ -211,10 +211,10 @@ Utilisez la [CHECKLIST.md](CHECKLIST.md) pour identifier les manques:
 
 ### Formation d'une Nouvelle Équipe
 Parcours de formation recommandé:
-1. Semaine 1: Git, CI/CD basics → [CICD_GUIDE.md](CICD_GUIDE.md)
-2. Semaine 2: Infrastructure, Cloud → [ARCHITECTURE_GUIDE.md](ARCHITECTURE_GUIDE.md)
-3. Semaine 3: Monitoring, Logging → [MONITORING_GUIDE.md](MONITORING_GUIDE.md)
-4. Semaine 4: Security, Best practices → [SECURITY_GUIDE.md](SECURITY_GUIDE.md)
+1. Semaine 1: Git, CI/CD basics → [GUIDE/CICD.md](GUIDE/CICD.md)
+2. Semaine 2: Infrastructure, Cloud → [GUIDE/ARCHITECTURE.md](GUIDE/ARCHITECTURE.md)
+3. Semaine 3: Monitoring, Logging → [GUIDE/MONITORING.md](GUIDE/MONITORING.md)
+4. Semaine 4: Security, Best practices → [GUIDE/SECURITY.md](GUIDE/SECURITY.md)
 
 ### Migration vers DevOps
 Plan de migration progressif:
@@ -255,15 +255,16 @@ devops-setup/
 ├── CONTRIBUTING.md            # Guide de contribution
 ├── CODE_OF_CONDUCT.md         # Code de conduite
 ├── CHECKLIST.md              # Checklist complète par phase
-├── TOOLS_GUIDE.md            # Guide de sélection des outils
-├── ARCHITECTURE_GUIDE.md     # Patterns et infrastructure
-├── CICD_GUIDE.md             # CI/CD et déploiement
-├── MONITORING_GUIDE.md       # Observabilité complète
-├── SECURITY_GUIDE.md         # Sécurité DevSecOps
 ├── PET_VS_CATTLE.md          # Philosophie infrastructure (Pet vs Cattle)
-└── TOOLS/
-    ├── IDE_GUIDE.md          # Guide des environnements de développement
-    └── ARTIFACTS_GUIDE.md    # Guide de gestion des artifacts
+└── GUIDE/
+    ├── TOOLS.md              # Guide de sélection des outils
+    ├── ARCHITECTURE.md       # Patterns et infrastructure
+    ├── CICD.md               # CI/CD et déploiement
+    ├── MONITORING.md         # Observabilité complète
+    ├── SECURITY.md           # Sécurité DevSecOps
+    └── TOOLS/
+        ├── IDE.md            # Guide des environnements de développement
+        └── ARTIFACTS.md      # Guide de gestion des artifacts
 ```
 
 ## 🔗 Ressources Complémentaires
