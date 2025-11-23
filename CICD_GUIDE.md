@@ -1136,6 +1136,8 @@ production:
 ALTER TABLE users ADD COLUMN email_verified BOOLEAN DEFAULT FALSE;
 
 -- Backward migration (down)
+-- ATTENTION: Sauvegardez les données avant rollback si nécessaire
+-- Ce rollback supprime des données - utilisez avec précaution
 ALTER TABLE users DROP COLUMN email_verified;
 ```
 
