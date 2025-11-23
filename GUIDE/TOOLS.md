@@ -71,7 +71,7 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 
 ## Environnement de Développement
 
-> **💡 Pour un guide détaillé et complet sur les environnements de développement, IDEs, dev containers et développement à distance, consultez [TOOLS/IDE.md](TOOLS/IDE.md)**
+> **💡 Pour un guide détaillé et complet sur les environnements de développement, IDEs, dev containers et développement à distance, consultez [TOOLS/IDE.md](./TOOLS/IDE.md)**
 
 ### Résumé des Options Principales
 
@@ -97,7 +97,7 @@ Environnements de développement conteneurisés standardisés garantissant la re
 - **Loft**: Virtual clusters Kubernetes pour dev teams
 - **VS Code Remote**: SSH, WSL, Containers
 
-Pour plus de détails sur la configuration, les best practices et des exemples complets, voir le [Guide IDE complet](TOOLS/IDE.md)
+Pour plus de détails sur la configuration, les best practices et des exemples complets, voir le [Guide IDE complet](./TOOLS/IDE.md)
 
 ## CI/CD
 
@@ -187,7 +187,7 @@ Pour plus de détails sur la configuration, les best practices et des exemples c
 
 ## Registres d'Artifacts
 
-> **💡 Pour un guide détaillé et complet sur les registres d'artefacts (Docker/OCI, Maven, npm, PyPI, etc.) avec tableaux comparatifs et best practices, consultez [TOOLS/ARTIFACTS.md](TOOLS/ARTIFACTS.md)**
+> **💡 Pour un guide détaillé et complet sur les registres d'artefacts (Docker/OCI, Maven, npm, PyPI, etc.) avec tableaux comparatifs et best practices, consultez [TOOLS/ARTIFACTS.md](./TOOLS/ARTIFACTS.md)**
 
 Les registres d'artifacts stockent et gèrent vos packages, images Docker, et autres artifacts de build.
 
@@ -227,7 +227,7 @@ Les registres d'artifacts stockent et gèrent vos packages, images Docker, et au
 - Nexus Pro comme alternative
 - Harbor + cloud provider pour hybride
 
-Pour le guide complet incluant la configuration, la sécurité, les tableaux comparatifs détaillés et les best practices, voir [TOOLS/ARTIFACTS.md](TOOLS/ARTIFACTS.md)
+Pour le guide complet incluant la configuration, la sécurité, les tableaux comparatifs détaillés et les best practices, voir [TOOLS/ARTIFACTS.md](./TOOLS/ARTIFACTS.md)
 
 ## Infrastructure as Code
 
