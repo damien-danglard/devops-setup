@@ -75,8 +75,15 @@ Tout sur l'intégration et déploiement continus:
 - Principes fondamentaux
 - Pipeline CI (Linting, Testing, Security, Build)
 - Pipeline CD (Environnements, Variables, Smoke tests)
+- **Architecture des Environnements CD:**
+  - Environnements détaillés (DEV, INT, QA, UAT, STAGING, PROD)
+  - Stratégies par type de projet (Startup, Standard, Enterprise)
+  - Workflows de promotion et patterns
+  - Matrice de décision pour choisir sa stratégie
+  - Best practices et anti-patterns
 - Stratégies de déploiement (Rolling, Blue/Green, Canary)
 - Feature Flags
+- GitOps (Flux CD, ArgoCD, Jenkins X)
 - Exemples de configuration (GitHub Actions, GitLab CI)
 - Métriques et optimisation
 
