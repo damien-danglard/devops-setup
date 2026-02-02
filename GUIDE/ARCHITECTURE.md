@@ -2,6 +2,8 @@
 
 Ce guide couvre les décisions architecturales et les meilleures pratiques d'infrastructure pour un projet DevOps.
 
+> **🎯 Décisions fondamentales :** Ce guide suppose que vous avez déjà choisi votre infrastructure (cloud provider, on-premise, hybrid). Si ce n'est pas le cas, consultez d'abord [PREREQUISITES.md - Choix du Cloud Provider ou Infrastructure](PREREQUISITES.md#choix-du-cloud-provider-ou-infrastructure).
+
 ## Table des Matières
 - [Patterns Architecturaux](#patterns-architecturaux)
 - [Infrastructure Cloud](#infrastructure-cloud)
