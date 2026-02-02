@@ -4,6 +4,41 @@
 
 Avant même de créer votre premier repository ou d'écrire la première ligne de code, certaines décisions fondamentales doivent être prises. Ces choix structurent l'ensemble de votre organisation DevOps et ont un impact à long terme sur tous vos projets.
 
+## 🗺️ Votre Parcours DevOps
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  VOUS ÊTES ICI : Premier Jour, Organisation Nouvelle        │
+│  📍 PREREQUISITES.md - Décisions fondamentales               │
+└─────────────────────────────────────────────────────────────┘
+                           ↓
+┌─────────────────────────────────────────────────────────────┐
+│  Décisions Organisationnelles (Une seule fois)               │
+│  • Git Provider (GitHub, GitLab, etc.)                       │
+│  • Plateforme CI/CD (GitHub Actions, GitLab CI, etc.)       │
+│  • Infrastructure (AWS, Azure, GCP, on-premise)              │
+│  • Agents CI/CD (SaaS vs self-hosted)                        │
+│  • Secret Management (Vault, cloud native, etc.)             │
+│  • Monitoring (Prometheus, Datadog, etc.)                    │
+│  • Conventions de nommage                                     │
+└─────────────────────────────────────────────────────────────┘
+                           ↓
+┌─────────────────────────────────────────────────────────────┐
+│  Configuration de Base (CHECKLIST.md - Phase 0)             │
+│  • Créer organisation sur Git provider                       │
+│  • Configurer IAM et permissions                             │
+│  • Activer MFA pour tous                                     │
+│  • Setup compte cloud et billing                             │
+└─────────────────────────────────────────────────────────────┘
+                           ↓
+┌─────────────────────────────────────────────────────────────┐
+│  ✅ Prêt pour Vos Projets !                                  │
+│  → CHECKLIST.md (Phases 1-12) pour chaque nouveau projet    │
+│  → GUIDE/TOOLS.md pour approfondir les choix                │
+│  → GUIDE/CICD.md, ARCHITECTURE.md, etc. pour l'implémentation│
+└─────────────────────────────────────────────────────────────┘
+```
+
 ## Table des Matières
 
 1. [Philosophie et Culture](#philosophie-et-culture)
