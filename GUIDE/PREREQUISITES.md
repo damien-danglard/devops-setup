@@ -869,7 +869,7 @@ Tags:
 - GitHub Free
 - GitHub Actions (minutes gratuites)
 - Hetzner VPS (5-20€/mois)
-- Gratidão maximum d'outils open source
+- Maximum d'outils open source gratuits
 → Viable pour side projects, MVP
 ```
 
