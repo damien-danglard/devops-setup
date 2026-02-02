@@ -2,7 +2,59 @@
 
 Cette checklist vous guide à travers toutes les étapes nécessaires pour initialiser un nouveau projet de développement du point de vue DevOps.
 
-## Phase 1: Préparation et Planification
+> **⚠️ IMPORTANT :** Si c'est votre **tout premier projet** ou que vous n'avez pas encore d'infrastructure DevOps organisationnelle, commencez par [GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md) pour les décisions fondamentales (Git provider, CI/CD, Cloud, etc.).
+
+Cette checklist suppose que vous avez déjà :
+- ✅ Choisi votre Git provider (GitHub, GitLab, etc.)
+- ✅ Choisi votre plateforme CI/CD
+- ✅ Choisi votre infrastructure Cloud ou on-premise
+- ✅ Mis en place la gestion des secrets
+- ✅ Défini votre stratégie de monitoring
+
+Si ce n'est pas le cas → [Voir GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md) **en premier**.
+
+---
+
+## Phase 0 : Prérequis Organisationnels (Premier Projet Uniquement)
+
+**Cette phase ne se fait qu'une seule fois pour l'organisation, pas pour chaque projet.**
+
+> 💡 **Si vous avez déjà une organisation DevOps établie, passez directement à la Phase 1.**
+
+### 0.1 Décisions Fondamentales
+- [ ] Lire et appliquer [GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md)
+- [ ] Choisir le Git provider (GitHub, GitLab, Bitbucket, Azure DevOps)
+- [ ] Choisir la plateforme CI/CD (GitHub Actions, GitLab CI, Jenkins, etc.)
+- [ ] Choisir le cloud provider ou infrastructure (AWS, Azure, GCP, on-premise)
+- [ ] Choisir l'outil de gestion de projet (Jira, Linear, GitHub Projects, etc.)
+- [ ] Définir la stratégie des runners CI/CD (SaaS vs self-hosted)
+
+### 0.2 Sécurité et Secrets
+- [ ] Choisir et configurer le secret manager (Vault, AWS Secrets Manager, 1Password, etc.)
+- [ ] Activer MFA pour tous les membres de l'équipe
+- [ ] Configurer SSO si applicable
+- [ ] Définir les politiques IAM de base
+
+### 0.3 Infrastructure de Base
+- [ ] Créer l'organisation/compte sur le Git provider
+- [ ] Créer le compte cloud (si cloud public)
+- [ ] Configurer le billing et les alertes de coût
+- [ ] Définir les conventions de nommage (repos, branches, environnements)
+
+### 0.4 Observabilité
+- [ ] Choisir la solution de monitoring (Prometheus, Datadog, CloudWatch, etc.)
+- [ ] Choisir la solution de logging (ELK, Loki, CloudWatch Logs, etc.)
+- [ ] Configurer les comptes et accès de base
+
+### 0.5 Documentation et Processus
+- [ ] Créer le wiki ou espace de documentation
+- [ ] Définir le processus d'incident response
+- [ ] Créer les templates de runbooks
+- [ ] Définir les rôles et responsabilités DevOps dans l'équipe
+
+---
+
+## Phase 1: Préparation et Planification (Par Projet)
 
 ### 1.1 Définition du Projet
 - [ ] Définir les objectifs du projet et les parties prenantes
@@ -12,18 +64,18 @@ Cette checklist vous guide à travers toutes les étapes nécessaires pour initi
 
 ### 1.2 Choix de la Méthodologie
 - [ ] Sélectionner la méthodologie de développement (Scrum, Kanban, etc.)
-- [ ] Définir les rôles et responsabilités de l'équipe
+- [ ] Définir les rôles et responsabilités de l'équipe pour ce projet
 - [ ] Établir les cérémonies et rituels d'équipe
-- [ ] Choisir les outils de gestion de projet (Jira, Trello, Azure DevOps, etc.)
+- [ ] Créer le projet dans l'outil de gestion choisi (Jira, Linear, GitHub Projects, etc.)
 
 ## Phase 2: Environnement de Développement
 
 ### 2.1 Gestion de Version
-- [ ] Créer le repository Git (GitHub, GitLab, Bitbucket, etc.)
-- [ ] Définir la stratégie de branching (Git Flow, GitHub Flow, Trunk-based, etc.)
-- [ ] Configurer les protections de branches
-- [ ] Définir les conventions de commit (Conventional Commits, etc.)
-- [ ] Configurer les templates de PR/MR
+- [ ] Créer le repository Git dans l'organisation établie
+- [ ] Appliquer la stratégie de branching de l'organisation (Git Flow, GitHub Flow, Trunk-based, etc.)
+- [ ] Configurer les protections de branches selon les standards de l'organisation
+- [ ] Appliquer les conventions de commit de l'organisation (Conventional Commits, etc.)
+- [ ] Utiliser les templates de PR/MR de l'organisation
 
 ### 2.2 Choix de la Stack Technique
 - [ ] Sélectionner le(s) langage(s) de programmation

@@ -1,11 +1,18 @@
 # DevOps Setup - Guide Complet
 
+> **🎯 Premier projet DevOps de votre organisation ?**  
+> **👉 Commencez par [GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md)** pour les décisions fondamentales (Git provider, CI/CD, Cloud, agents, secrets, etc.)  
+> Cette étape est **essentielle** avant de créer votre premier repository !
+
+---
+
 Guide complet et checklist pour initialiser un nouveau projet de développement from scratch, du point de vue DevOps. Ce guide couvre tous les aspects techniques et méthodologiques, du choix des outils jusqu'au déploiement en production.
 
 ## 📋 Vue d'Ensemble
 
 Ce repository contient un guide horizontal et complet pour mettre en place un projet de développement avec une approche DevOps moderne. Il couvre:
 
+- ✅ **Prérequis Organisationnels**: Décisions fondamentales avant le premier projet
 - ✅ **Méthodologie**: Choix des processus et méthodes de travail
 - ✅ **Tooling**: Sélection des outils pour chaque aspect du projet
 - ✅ **Infrastructure**: Architecture et provisioning
@@ -16,10 +23,30 @@ Ce repository contient un guide horizontal et complet pour mettre en place un pr
 
 ## 📚 Documentation
 
+### [🎯 GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md)
+**⭐ NOUVEAU - Prérequis et Décisions Fondamentales**
+
+**Commencez ici si c'est votre tout premier projet DevOps !**
+
+Guide complet pour les décisions à prendre avant de créer votre premier repository :
+- Philosophie et culture DevOps
+- Choix du Git provider (GitHub, GitLab, Bitbucket, Azure DevOps)
+- Choix de l'outil de gestion de projet (Jira, Linear, GitHub Projects)
+- Choix de l'outil de pipeline CI/CD (GitHub Actions, GitLab CI, Jenkins)
+- Infrastructure des agents CI/CD (SaaS vs auto-hébergé, VM vs containers, orchestrateur vs virtualiseur)
+- Choix du cloud provider ou infrastructure (AWS, Azure, GCP, on-premise)
+- Gestion des secrets et credentials (Vault, AWS Secrets Manager, 1Password)
+- Stratégie de sécurité organisationnelle
+- Observabilité et monitoring
+- Structure organisationnelle (mono-repo vs multi-repo, naming conventions)
+- Budget et coûts
+- Checklist de démarrage organisationnel
+
 ### [📝 CHECKLIST.md](CHECKLIST.md)
 **Checklist complète d'initialisation d'un projet DevOps**
 
 Une checklist détaillée couvrant toutes les phases:
+- **Phase 0**: Prérequis Organisationnels (premier projet uniquement)
 - Phase 1: Préparation et Planification
 - Phase 2: Environnement de Développement
 - Phase 3: Qualité du Code
@@ -128,9 +155,29 @@ Concept fondamental DevOps pour gestion d'infrastructure:
 
 ## 🚀 Démarrage Rapide
 
-### Pour un Nouveau Projet
+### Premier Projet de Votre Organisation ?
 
-1. **Commencez par la checklist**  
+**Vous n'avez jamais configuré d'infrastructure DevOps ?**
+
+1. **⭐ COMMENCEZ ICI : [GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md)**  
+   Prenez les décisions fondamentales AVANT de créer votre premier repo :
+   - Quel Git provider ? (GitHub, GitLab, etc.)
+   - Quel outil de CI/CD ? (GitHub Actions, GitLab CI, etc.)
+   - Quelle infrastructure ? (AWS, Azure, GCP, on-premise)
+   - Comment gérer les secrets ?
+   - Quelle stratégie pour les agents CI/CD ? (SaaS vs self-hosted)
+
+2. **Configuration de base organisationnelle**  
+   Phase 0 de [CHECKLIST.md](CHECKLIST.md) - à faire une seule fois
+
+3. **Ensuite, créez votre premier projet**  
+   Suivez les phases 1-12 de [CHECKLIST.md](CHECKLIST.md)
+
+### Pour un Nouveau Projet (Organisation DevOps Déjà Établie)
+
+Vous avez déjà une infrastructure DevOps en place ?
+
+1. **Suivez la checklist** à partir de la Phase 1  
    Ouvrez [CHECKLIST.md](CHECKLIST.md) et suivez les étapes
 
 2. **Choisissez vos outils**  
@@ -179,8 +226,15 @@ Concept fondamental DevOps pour gestion d'infrastructure:
 
 ## 📖 Ordre de Lecture Recommandé
 
-### Pour Débutants en DevOps
-1. [CHECKLIST.md](CHECKLIST.md) - Vue d'ensemble
+### Pour Organisations Débutant en DevOps (Premier Jour)
+1. **[GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md) - COMMENCEZ ICI** ⭐
+2. [CHECKLIST.md](CHECKLIST.md) Phase 0 - Configuration organisationnelle
+3. [GUIDE/TOOLS.md](GUIDE/TOOLS.md) - Approfondir les choix d'outils
+4. [GUIDE/SECURITY.md](GUIDE/SECURITY.md) - Fondations sécurité
+5. Puis continuez avec les projets individuels (CHECKLIST.md Phases 1-12)
+
+### Pour Débutants en DevOps (Organisation Établie)
+1. [CHECKLIST.md](CHECKLIST.md) - Vue d'ensemble (à partir de Phase 1)
 2. [GUIDE/TOOLS.md](GUIDE/TOOLS.md) - Comprendre les options
 3. [GUIDE/CICD.md](GUIDE/CICD.md) - Premiers pipelines
 4. [GUIDE/SECURITY.md](GUIDE/SECURITY.md) - Bases de sécurité
@@ -194,8 +248,9 @@ Concept fondamental DevOps pour gestion d'infrastructure:
 
 ### Pour Décideurs/Managers
 1. [README.md](README.md) - Vue d'ensemble (ce fichier)
-2. Matrices de décision dans [GUIDE/TOOLS.md](GUIDE/TOOLS.md)
-3. Sections "Principes" et "Best Practices" de chaque guide
+2. [GUIDE/PREREQUISITES.md](GUIDE/PREREQUISITES.md) - Décisions stratégiques ⭐
+3. Matrices de décision dans [GUIDE/TOOLS.md](GUIDE/TOOLS.md)
+4. Sections "Principes" et "Best Practices" de chaque guide
 
 ## 🎯 Cas d'Usage
 
@@ -254,9 +309,10 @@ devops-setup/
 ├── LICENSE                    # Licence MIT
 ├── CONTRIBUTING.md            # Guide de contribution
 ├── CODE_OF_CONDUCT.md         # Code de conduite
-├── CHECKLIST.md              # Checklist complète par phase
+├── CHECKLIST.md              # Checklist complète par phase (avec Phase 0 organisationnelle)
 ├── PET_VS_CATTLE.md          # Philosophie infrastructure (Pet vs Cattle)
 └── GUIDE/
+    ├── PREREQUISITES.md      # ⭐ NOUVEAU - Prérequis et décisions fondamentales (COMMENCEZ ICI)
     ├── TOOLS.md              # Guide de sélection des outils
     ├── ARCHITECTURE.md       # Patterns et infrastructure
     ├── CICD.md               # CI/CD et déploiement
