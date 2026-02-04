@@ -70,7 +70,7 @@ GitHub est la plateforme leader de gestion de code source et de collaboration po
 - ✅ **Intégrations natives**: Slack, Microsoft Teams, Jira, etc.
 
 **Limitations:**
-- ❌ **Actions Marketplace**: Limité à l'écosystème GitHub (pas de portabilité directe vers GitLab CI, etc.)
+- ❌ **Actions Marketplace**: Principalement conçu pour l'écosystème GitHub (syntaxe de workflows spécifique ; actions souvent réutilisables comme conteneurs ou scripts dans d'autres systèmes CI/CD)
 - ❌ **Vendor lock-in modéré**: Certaines fonctionnalités (Actions syntax, Copilot) sont spécifiques à GitHub
 - ⚠️ **GitHub Enterprise Server**: Fonctionnalités parfois en retard par rapport à la version cloud
 
