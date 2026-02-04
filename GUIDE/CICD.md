@@ -2,6 +2,8 @@
 
 Ce guide couvre les meilleures pratiques pour mettre en place un pipeline CI/CD efficace.
 
+> **🎯 Avant de commencer :** Assurez-vous d'avoir choisi votre plateforme CI/CD et défini votre infrastructure d'agents. Voir [PREREQUISITES.md - Choix de l'Outil de Pipeline CI/CD](PREREQUISITES.md#choix-de-loutil-de-pipeline-cicd) et [Infrastructure des Agents CI/CD](PREREQUISITES.md#infrastructure-des-agents-cicd).
+
 ## Table des Matières
 - [Principes Fondamentaux](#principes-fondamentaux)
 - [Pipeline CI](#pipeline-ci)

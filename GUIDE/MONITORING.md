@@ -2,6 +2,8 @@
 
 Ce guide couvre les pratiques essentielles pour assurer la visibilité et la fiabilité de vos systèmes.
 
+> **🎯 Choix de la stack de monitoring :** Ce guide suppose que vous avez déjà choisi vos outils de monitoring (metrics, logs, traces). Si ce n'est pas le cas, consultez d'abord [PREREQUISITES.md - Observabilité et Monitoring](PREREQUISITES.md#observabilité-et-monitoring) pour les options et recommandations.
+
 ## Table des Matières
 - [Les Trois Piliers de l'Observabilité](#les-trois-piliers-de-lobservabilité)
 - [Métriques](#métriques)

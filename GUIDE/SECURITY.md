@@ -2,6 +2,8 @@
 
 Ce guide couvre les pratiques de sécurité essentielles à intégrer tout au long du cycle de développement.
 
+> **🎯 Fondations de sécurité :** Avant d'implémenter des pratiques de sécurité spécifiques, assurez-vous d'avoir mis en place les fondations organisationnelles : MFA, SSO, secret management, IAM. Voir [PREREQUISITES.md - Stratégie de Sécurité Organisationnelle](PREREQUISITES.md#stratégie-de-sécurité-organisationnelle) et [Gestion des Secrets](PREREQUISITES.md#gestion-des-secrets-et-credentials).
+
 ## Table des Matières
 - [Shift Left Security](#shift-left-security)
 - [Sécurité du Code](#sécurité-du-code)

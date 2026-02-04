@@ -2,6 +2,17 @@
 
 Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre projet DevOps.
 
+> **🎯 Première configuration DevOps ?**  
+> Si c'est votre tout premier projet ou que vous configurez l'infrastructure DevOps de votre organisation pour la première fois, consultez d'abord **[PREREQUISITES.md](PREREQUISITES.md)** pour les décisions fondamentales :
+> - Choix du Git provider
+> - Choix de la plateforme CI/CD
+> - Choix du cloud provider
+> - Infrastructure des agents CI/CD
+> - Gestion des secrets
+> - Stratégie de monitoring
+>
+> Ce document (TOOLS.md) approfondit les options présentées dans PREREQUISITES.md.
+
 ## Table des Matières
 - [Gestion de Version](#gestion-de-version)
 - [Environnement de Développement](#environnement-de-développement)
@@ -14,6 +25,8 @@ Ce guide vous aide à choisir les outils appropriés pour chaque aspect de votre
 - [Sécurité](#sécurité)
 
 ## Gestion de Version
+
+> 💡 **Décision organisationnelle :** Le choix du Git provider se fait une fois pour toute l'organisation. Voir [PREREQUISITES.md - Choix du Git Provider](PREREQUISITES.md#choix-du-git-provider) pour la matrice de décision complète.
 
 ### Git Hosting Platforms
 
@@ -100,6 +113,8 @@ Environnements de développement conteneurisés standardisés garantissant la re
 Pour plus de détails sur la configuration, les best practices et des exemples complets, voir le [Guide IDE complet](./TOOLS/IDE.md)
 
 ## CI/CD
+
+> 💡 **Décision organisationnelle :** Le choix de la plateforme CI/CD et de l'infrastructure des agents se fait une fois pour toute l'organisation. Voir [PREREQUISITES.md - Choix de l'Outil de Pipeline CI/CD](PREREQUISITES.md#choix-de-loutil-de-pipeline-cicd) et [Infrastructure des Agents CI/CD](PREREQUISITES.md#infrastructure-des-agents-cicd) pour les matrices de décision complètes.
 
 ### GitHub Actions
 
@@ -447,6 +462,8 @@ Pour le guide complet incluant la configuration, la sécurité, les tableaux com
 
 ## Monitoring et Observabilité
 
+> 💡 **Décision organisationnelle :** La solution de monitoring et observabilité se choisit une fois pour toute l'organisation. Voir [PREREQUISITES.md - Observabilité et Monitoring](PREREQUISITES.md#observabilité-et-monitoring) pour les options et recommandations.
+
 ### Prometheus + Grafana
 
 ![Hosting](https://img.shields.io/badge/Hosting-Self--hosted-brightgreen) ![Hosting](https://img.shields.io/badge/Hosting-SaaS%20(Grafana%20Cloud)-blue)  
@@ -565,6 +582,8 @@ Pour le guide complet incluant la configuration, la sécurité, les tableaux com
 **Cas d'usage:** Infrastructure GCP
 
 ## Gestion des Secrets
+
+> 💡 **Décision organisationnelle :** Le secret manager est une décision critique à prendre dès le début. Voir [PREREQUISITES.md - Gestion des Secrets et Credentials](PREREQUISITES.md#gestion-des-secrets-et-credentials) pour la matrice de décision complète et les recommandations par taille d'organisation.
 
 ### HashiCorp Vault
 
