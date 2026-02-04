@@ -297,7 +297,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm test
 ```
@@ -905,7 +905,7 @@ Tags:
 ### FinOps : Optimisation Continue
 
 Principes à intégrer dès le début :
-- **Tagging rigoureux** : Tous les resources taggés (projet, env, owner)
+- **Tagging rigoureux** : Toutes les ressources taggées (projet, env, owner)
 - **Right-sizing** : Pas de over-provisioning
 - **Autoscaling** : Scale down la nuit/weekend
 - **Reserved instances** : Commitment pour coûts récurrents
