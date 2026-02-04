@@ -56,7 +56,7 @@ JetBrains est un éditeur de logiciels tchèque fondé en 2000, spécialisé dan
 - **Type**: Desktop (payant uniquement)
 
 **RustRover**
-- **Description**: IDE Rust (nouveau, 2023)
+- **Description**: IDE Rust dédié
 - **Type**: Desktop (payant)
 
 #### IDEs multi-langages
