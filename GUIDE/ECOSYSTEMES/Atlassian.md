@@ -283,7 +283,7 @@ Atlassian est un éditeur de logiciels australien fondé en 2002, spécialisé d
 - Load balancer pour clustering
 - Monitoring robuste
 
-**Note importante:** Atlassian a arrêté les licences Server (version simple self-hosted) en 2024, ne reste que Data Center pour self-hosting.
+**Note importante:** Atlassian a arrêté la vente de nouvelles licences Server (version simple self-hosted) en février 2021 et a mis fin au support de Server le 15 février 2024 ; il ne reste désormais que l’édition Data Center pour le self-hosting.
 
 ## Prix
 
