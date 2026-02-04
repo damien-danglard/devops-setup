@@ -268,7 +268,7 @@ JetBrains est un éditeur de logiciels tchèque fondé en 2000, spécialisé dan
    - Peut bloquer temporairement
 
 5. **Versions Community limitées**
-   - PyCharm CE: pas de web frameworks (Django, Flask)
+   - PyCharm CE: support web frameworks limité (Django, Flask via plugins / fonctionnalités Python génériques), outils avancés réservés à la version Professional
    - IntelliJ CE: pas de Spring, Jakarta EE, JavaScript avancé
    - Nécessite Ultimate/Professional pour features avancées
 
