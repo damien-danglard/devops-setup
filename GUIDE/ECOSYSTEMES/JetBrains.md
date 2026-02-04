@@ -410,7 +410,7 @@ JetBrains est un éditeur de logiciels tchèque fondé en 2000, spécialisé dan
 
 **Self-hosted:**
 - **Free**: 10 utilisateurs
-- **Commercial**: €100/10 utilisateurs/an puis $50/10 utilisateurs additionnels
+- **Commercial**: €100/10 utilisateurs/an puis €50/10 utilisateurs additionnels
 
 ## Cas d'usage recommandés
 
